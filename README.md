@@ -52,7 +52,7 @@ because PyTDC imports `pkg_resources`. Neither affects the benchmark path.
 
 ## Results
 
-All 15 tasks run so far, under the official five-seed protocol. "Board top"
+All 16 tasks run so far, under the official five-seed protocol. "Board top"
 is the best listed entry on that task's public page on 8 November 2026.
 
 | Task | Metric | This code | Board top 3 | Would-be rank | Selected model |
@@ -69,6 +69,7 @@ is the best listed entry on that task's public page on 8 November 2026.
 | half_life_obach | Spearman | 0.508 ± 0.025 | CFA 0.576; MapLight 0.562; MapLight + GNN 0.557 | **6 of 21** | dma-et-base-log + dma-lgbm-base-log + dma-et-base + dma-lgbm-base |
 | herg | AUROC | 0.836 ± 0.007 | MapLight + GNN 0.88; CFA 0.875; SimGCN 0.874 | **9 of 21** | dma-lgbm-shallow + dma-lgbm-base + dm-lgbm-base |
 | hia_hou | AUROC | 0.987 ± 0.002 | MiniMol 0.993; DeepMol (AutoML) 0.99; MapLight + GNN 0.989 | **5 of 21** | wide-lgbm-base + dma-lgbm-base + dma-et-base |
+| lipophilicity_astrazeneca | MAE | 0.524 ± 0.003 | MiniMol 0.456; Chemprop-RDKit 0.467; Chemprop 0.47 | **7 of 22** | dma-lgbm-shallow |
 | pgp_broccatelli | AUROC | 0.910 ± 0.015 | MapLight + GNN 0.938; ZairaChem 0.935; MapLight 0.93 | **8 of 17** | dma-lgbm-deep + dma-lgbm-shallow + dma-lgbm-base + dma-et-base |
 | ppbr_az | MAE | 7.766 ± 0.162 | Gradient Boost 7.44; MapLight + GNN 7.526; MapLight 7.66 | **5 of 21** | dm-lgbm-base + dma-lgbm-shallow + dma-lgbm-base |
 | vdss_lombardo | Spearman | 0.702 ± 0.010 | MapLight + GNN 0.713; MapLight 0.707; CFA 0.628 | **3 of 20** | dm-lgbm-base-log + dma-lgbm-shallow-log |

@@ -46,6 +46,14 @@ FEATURE_SETS = {
     "desc": ("desc",),  # ~210 columns: the only set small enough for TabPFN v2
     "dmap": ("desc", "morgan", "avalon", "maccs", "atompair"),
     "full": ("desc", "morgan", "fcfp", "avalon", "maccs", "atompair", "rdkfp"),
+    # Round 3. The published MapLight entries describe a set of this shape: ECFP
+    # counts, Avalon, the extended reduced graph, RDKit 2D descriptors, and a
+    # pretrained graph-network embedding. Built here from our own code over the
+    # component libraries; no entrant's code is used. 3,897 columns.
+    "maplight": ("desc", "morgan", "avalon", "erg", "gin"),
+    # The same set without the pretrained embedding, so inner CV can say whether the
+    # embedding earns its place instead of us assuming it does. 3,597 columns.
+    "mlng": ("desc", "morgan", "avalon", "erg"),
 }
 
 # TabPFN v2 (PriorLabs open weights). Any result that includes a TabPFN member
@@ -261,6 +269,22 @@ def candidate_configs(task_kind: str, metric_kind: str, big: bool, budget: str |
             cfgs.append({"features": fs, "learner": "cat", "variant": "base"})
             cfgs.append({"features": fs, "learner": "hgb", "variant": "base"})
 
+    if budget == "maplight":
+        # Round 3: CatBoost and LightGBM over the MapLight-shaped set and over the
+        # same set without the pretrained embedding. Nothing else, so the inner-CV
+        # comparison is about the features rather than a wider model search.
+        cfgs = [
+            {"features": "maplight", "learner": "lgbm", "variant": "base"},
+            {"features": "maplight", "learner": "lgbm", "variant": "shallow"},
+            {"features": "maplight", "learner": "lgbm", "variant": "deep"},
+            {"features": "maplight", "learner": "cat", "variant": "base"},
+            {"features": "mlng", "learner": "lgbm", "variant": "base"},
+            {"features": "mlng", "learner": "lgbm", "variant": "shallow"},
+            {"features": "mlng", "learner": "lgbm", "variant": "deep"},
+            {"features": "mlng", "learner": "cat", "variant": "base"},
+            {"features": "mlng", "learner": "et", "variant": "base"},
+        ]
+
     if budget == "strong":
         cfgs.append({"features": "dmap", "learner": "lgbm", "variant": "base"})
         cfgs.append({"features": "dmap", "learner": "lgbm", "variant": "shallow"})
@@ -275,7 +299,10 @@ def candidate_configs(task_kind: str, metric_kind: str, big: bool, budget: str |
         # not, and the inner folds answer that with two extra candidates.
         extra = []
         for cfg in cfgs:
-            if cfg["variant"] == "base" and cfg["features"] == "dma":
+            # The log target is offered on the main feature set of whichever round is
+            # running. On VDss it was worth 0.22 Spearman to the plain config, so a
+            # round whose candidates are all on the raw target would be crippled.
+            if cfg["variant"] == "base" and cfg["features"] in ("dma", "maplight", "mlng"):
                 c = dict(cfg)
                 c["log_target"] = True
                 extra.append(c)
