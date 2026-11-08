@@ -1,0 +1,112 @@
+{
+ "task": "ld50_zhu",
+ "metric": "mae",
+ "higher_is_better": false,
+ "mean": 0.602,
+ "std": 0.004,
+ "per_seed": [
+  0.597,
+  0.605,
+  0.597,
+  0.602,
+  0.607
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [],
+  "mean_half_scores": [],
+  "skipped": [
+   "single member: nothing to stack"
+  ]
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.4996096392735884,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.4996096392735884
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.4996096392735884,
+    "inner_std": 0.01407593005789535,
+    "inner_folds": [
+     0.4810091234610873,
+     0.5150510142707122,
+     0.5027687800889656
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 193.3787989616394
+  }
+ },
+ "dataset": {
+  "train_val": 5907,
+  "test": 1478,
+  "unique_smiles": 7342,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "avalon",
+   "desc",
+   "maccs",
+   "morgan"
+  ],
+  "feature_columns": 3456,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "unset",
+  "ckpt_classifier": "unset",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 573.4,
+ "finished_utc": "2026-11-08T18:02:24Z"
+}

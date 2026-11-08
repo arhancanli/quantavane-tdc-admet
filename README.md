@@ -88,6 +88,8 @@ reporting those would make the published number a selected maximum.
 | clearance_hepatocyte_az | `clearance_hepatocyte_az_round2.json` | 0.5703 | 0.455 ± 0.013 | yes |
 | clearance_microsome_az | `clearance_microsome_az.json` | 0.6482 | 0.592 ± 0.010 | no |
 | clearance_microsome_az | `clearance_microsome_az_round2.json` | 0.6668 | 0.583 ± 0.009 | yes |
+| ppbr_az | `ppbr_az.json` | 8.8515 | 7.766 ± 0.162 | yes |
+| ppbr_az | `ppbr_az_r3maplight.json` | 8.9432 | 7.712 ± 0.154 | no |
 | vdss_lombardo | `vdss_lombardo.json` | 0.6690 | 0.706 ± 0.006 | no |
 | vdss_lombardo | `vdss_lombardo_r3maplight.json` | 0.6659 | 0.709 ± 0.009 | no |
 | vdss_lombardo | `vdss_lombardo_round2.json` | 0.6883 | 0.702 ± 0.010 | yes |
@@ -104,6 +106,7 @@ whether the search earns its keep, and on these tasks the answer is mixed.
 | dili | AUROC | 0.881 ± 0.021 | 0.879 ± 0.009 | ensemble | ensemble |
 | herg | AUROC | 0.836 ± 0.007 | 0.844 ± 0.008 | ensemble | fixed config |
 | hia_hou | AUROC | 0.987 ± 0.002 | 0.983 ± 0.003 | ensemble | ensemble |
+| ld50_zhu | MAE | 0.586 ± 0.004 | 0.602 ± 0.004 | ensemble | ensemble |
 | vdss_lombardo | Spearman | 0.702 ± 0.010 | 0.484 ± 0.032 | ensemble | ensemble |
 
 The reported number is always the model inner CV picked, even where the control

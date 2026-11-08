@@ -1,0 +1,182 @@
+{
+ "task": "ppbr_az",
+ "metric": "mae",
+ "higher_is_better": false,
+ "mean": 7.712,
+ "std": 0.154,
+ "per_seed": [
+  7.812,
+  7.846,
+  7.804,
+  7.428,
+  7.671
+ ],
+ "selected_members": [
+  "mlng-lgbm-shallow"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [],
+  "mean_half_scores": [],
+  "skipped": [
+   "single member: nothing to stack"
+  ]
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "mlng",
+   "learner": "lgbm",
+   "variant": "shallow",
+   "log_target": false,
+   "id": "mlng-lgbm-shallow"
+  }
+ ],
+ "selected_inner_mean": 8.943192867217476,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "mlng-lgbm-base": 9.10971404209678,
+   "mlng-lgbm-shallow": 8.943192867217476,
+   "mlng-lgbm-deep": 9.221459445670945,
+   "mlng-cat-base": 9.133871170112549,
+   "mlng-et-base": 10.591852524226747
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "mlng-lgbm-shallow"
+    ],
+    "inner_mean": 8.943192867217476,
+    "inner_std": 0.7593995262507035,
+    "inner_folds": [
+     8.523403608565943,
+     8.29701261988508,
+     10.009162373201404
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-base"
+    ],
+    "inner_mean": 8.969507659511796,
+    "inner_std": 0.8831875720842182,
+    "inner_folds": [
+     8.369729307499927,
+     8.320592389085554,
+     10.218201281949908
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-base",
+     "mlng-cat-base"
+    ],
+    "inner_mean": 8.958562697497847,
+    "inner_std": 0.8782293573960647,
+    "inner_folds": [
+     8.42168448924322,
+     8.25707832607957,
+     10.196925277170747
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-base",
+     "mlng-cat-base",
+     "mlng-lgbm-deep"
+    ],
+    "inner_mean": 8.993187236309064,
+    "inner_std": 0.9606051029185146,
+    "inner_folds": [
+     8.3489430758705,
+     8.279522011173023,
+     10.35109662188367
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-base",
+     "mlng-cat-base",
+     "mlng-lgbm-deep",
+     "mlng-et-base"
+    ],
+    "inner_mean": 9.21861488231284,
+    "inner_std": 1.0153769451700294,
+    "inner_folds": [
+     8.473533562293497,
+     8.528081753212412,
+     10.654229331432612
+    ]
+   }
+  ],
+  "config_seconds": {
+   "mlng-lgbm-base": 75.40224480628967,
+   "mlng-lgbm-shallow": 46.4215943813324,
+   "mlng-lgbm-deep": 121.90189909934998,
+   "mlng-cat-base": 12.81251311302185,
+   "mlng-et-base": 7.548760890960693
+  }
+ },
+ "dataset": {
+  "train_val": 2231,
+  "test": 559,
+  "unique_smiles": 1797,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "avalon",
+   "desc",
+   "erg",
+   "morgan"
+  ],
+  "feature_columns": 3604,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "maplight",
+ "candidate_ids": [
+  "mlng-lgbm-base",
+  "mlng-lgbm-shallow",
+  "mlng-lgbm-deep",
+  "mlng-cat-base",
+  "mlng-et-base"
+ ],
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "unset",
+  "ckpt_classifier": "unset",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 420.4,
+ "finished_utc": "2026-11-08T18:02:15Z"
+}
