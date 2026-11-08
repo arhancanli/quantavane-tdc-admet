@@ -133,6 +133,13 @@ def make_estimator(cfg: dict, task_kind: str, metric_kind: str, seed: int = 0):
             )
         kw = dict(device="cpu", n_estimators=TABPFN_N, random_state=seed,
                   ignore_pretraining_limits=True, model_path=ckpt)
+        # Measured on this Mac: with 791 training rows, 210 features and only two
+        # ensemble members, TabPFN v2 peaked at 4.3 GB and the memory watchdog killed
+        # the run. It is an in-context learner, so the whole training set sits in the
+        # forward pass. TABPFN_SAVE_MEMORY turns on the package's own memory-saving
+        # path, which trades speed for a much smaller peak.
+        if os.environ.get("TABPFN_SAVE_MEMORY"):
+            kw["memory_saving_mode"] = True
         return (TabPFNRegressor if task_kind == "regression" else TabPFNClassifier)(**kw)
 
     if learner == "hgb":
