@@ -35,6 +35,33 @@ def inner_score(rec: dict):
     raise KeyError(f"cannot recover inner score for {rec['task']}")
 
 
+COMMON_SEEDS = (101, 102, 103)
+
+
+def inner_common(rec: dict) -> float:
+    """The selected blend's inner score on the tuning folds every round shares.
+
+    From 2026-11-08T18:13Z the round-3 runs of five tasks use fifteen tuning seeds
+    instead of three, to make the selector less noisy. A fifteen-seed mean is not
+    comparable with a three-seed mean, so the cross-round choice is made on the seeds
+    the rounds have in common. Nothing is refitted: the per-fold scores are already in
+    the result file. For a round that used exactly the common seeds this returns the
+    same number as before, so older rounds are unaffected.
+    """
+    cv = rec["inner_cv"]
+    seeds = list(cv["tune_seeds"])
+    for cand in cv["blend_candidates"]:
+        if cand["members"] == rec["selected_members"]:
+            keep = [f for s, f in zip(seeds, cand["inner_folds"]) if s in COMMON_SEEDS]
+            if len(keep) != len(COMMON_SEEDS):
+                raise KeyError(
+                    f"{rec['task']}: tuning seeds {seeds} do not contain all of "
+                    f"{COMMON_SEEDS}, so this round cannot be compared with the others"
+                )
+            return float(sum(keep) / len(keep))
+    raise KeyError(f"cannot recover inner folds for {rec['task']}")
+
+
 def would_be_rank(ours: float, rows, higher_better: bool):
     """(rank, n_listed_after_insert, beaten_by) for our value against the listed column."""
     better = sum(1 for _, _, v, _ in rows if (v > ours if higher_better else v < ours))
@@ -68,7 +95,7 @@ def main() -> None:
             records.append(rounds[0])
             continue
         hb = rounds[0]["higher_is_better"]
-        scored = [(inner_score(r), r) for r in rounds]
+        scored = [(inner_common(r), r) for r in rounds]
         best_inner, best = max(scored, key=lambda sr: sr[0] if hb else -sr[0])
         best = dict(best)
         best["_rounds"] = len(rounds)

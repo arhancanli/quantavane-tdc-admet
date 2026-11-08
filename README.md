@@ -106,6 +106,7 @@ whether the search earns its keep, and on these tasks the answer is mixed.
 |---|---|---|---|---|---|
 | caco2_wang | MAE | 0.291 ± 0.005 | 0.299 ± 0.013 | ensemble | ensemble |
 | dili | AUROC | 0.881 ± 0.021 | 0.879 ± 0.009 | ensemble | ensemble |
+| half_life_obach | Spearman | 0.508 ± 0.025 | 0.200 ± 0.075 | ensemble | ensemble |
 | herg | AUROC | 0.836 ± 0.007 | 0.844 ± 0.008 | ensemble | fixed config |
 | hia_hou | AUROC | 0.987 ± 0.002 | 0.983 ± 0.003 | ensemble | ensemble |
 | ld50_zhu | MAE | 0.586 ± 0.004 | 0.602 ± 0.004 | ensemble | ensemble |

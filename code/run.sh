@@ -22,12 +22,14 @@ export OPENBLAS_NUM_THREADS="$ADMET_THREADS"
 
 mkdir -p "$BASE/logs" "$BASE/results"
 # Name the log after the task arguments only, ignoring flags and their values.
+# Everything from the first flag onwards is options, and some of them take several
+# values (--tune-seeds takes fifteen), so only the leading task names become the log
+# name. The old version skipped exactly one word after a flag and turned the rest into
+# filename parts, which produced a 90-character log name.
 LOGNAME=""
-skip=0
 for a in "$@"; do
-  if [ "$skip" = 1 ]; then skip=0; continue; fi
   case "$a" in
-    --*) skip=1 ;;
+    --*) break ;;
     *) LOGNAME="${LOGNAME:+$LOGNAME+}$a" ;;
   esac
 done

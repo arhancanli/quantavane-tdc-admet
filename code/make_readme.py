@@ -28,6 +28,33 @@ def inner(rec: dict) -> float:
     raise KeyError(rec["task"])
 
 
+COMMON_SEEDS = (101, 102, 103)
+
+
+def inner_common(rec: dict) -> float:
+    """The selected blend's inner score on the tuning folds every round shares.
+
+    From 2026-11-08T18:13Z the round-3 runs of five tasks use fifteen tuning seeds
+    instead of three, to make the selector less noisy. A fifteen-seed mean is not
+    comparable with a three-seed mean, so the cross-round choice is made on the seeds
+    the rounds have in common. Nothing is refitted: the per-fold scores are already in
+    the result file. For a round that used exactly the common seeds this returns the
+    same number as before, so older rounds are unaffected.
+    """
+    cv = rec["inner_cv"]
+    seeds = list(cv["tune_seeds"])
+    for cand in cv["blend_candidates"]:
+        if cand["members"] == rec["selected_members"]:
+            keep = [f for s, f in zip(seeds, cand["inner_folds"]) if s in COMMON_SEEDS]
+            if len(keep) != len(COMMON_SEEDS):
+                raise KeyError(
+                    f"{rec['task']}: tuning seeds {seeds} do not contain all of "
+                    f"{COMMON_SEEDS}, so this round cannot be compared with the others"
+                )
+            return float(sum(keep) / len(keep))
+    raise KeyError(f"cannot recover inner folds for {rec['task']}")
+
+
 def load_rounds() -> tuple[dict, dict]:
     """{task: [rounds]} for the model arm, and {task: record} for the control arm."""
     rounds: dict[str, list[dict]] = {}
@@ -48,7 +75,7 @@ def load_rounds() -> tuple[dict, dict]:
 def pick(rs: list[dict]) -> dict:
     """The round with the best inner-CV score. Never the best test score."""
     hb = rs[0]["higher_is_better"]
-    return max(rs, key=lambda r: inner(r) if hb else -inner(r))
+    return max(rs, key=lambda r: inner_common(r) if hb else -inner_common(r))
 
 
 def rank_of(task: str, ours: float):
