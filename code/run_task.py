@@ -26,9 +26,10 @@ def main() -> int:
     ap.add_argument("--tune-seeds", type=int, nargs="+", default=list(protocol.TUNE_SEEDS))
     ap.add_argument(
         "--budget",
-        choices=["lean", "full"],
+        choices=["lean", "full", "strong"],
         default=None,
-        help="lean = LightGBM/ExtraTrees only (default); full also searches CatBoost and HistGB",
+        help="lean = LightGBM/ExtraTrees only (default); full adds CatBoost and HistGB; "
+        "strong also adds the atom-pair and RDKit-path feature sets and TabPFN v2",
     )
     ap.add_argument(
         "--only-configs",

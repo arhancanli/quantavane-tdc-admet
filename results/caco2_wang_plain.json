@@ -1,0 +1,74 @@
+{
+ "task": "caco2_wang",
+ "metric": "mae",
+ "higher_is_better": false,
+ "mean": 0.299,
+ "std": 0.013,
+ "per_seed": [
+  0.318,
+  0.286,
+  0.289,
+  0.29,
+  0.311
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.3920650705021225,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.3920650705021225
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.3920650705021225,
+    "inner_std": 0.012838720135331433,
+    "inner_folds": [
+     0.4095560412046365,
+     0.38753841911096604,
+     0.3791007511907652
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 203.44489669799805
+  }
+ },
+ "dataset": {
+  "train_val": 728,
+  "test": 182,
+  "unique_smiles": 906,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "wall_seconds": 413.7,
+ "finished_utc": "2026-11-08T17:06:46Z"
+}

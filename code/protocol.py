@@ -101,6 +101,14 @@ class TaskData:
         self.cache_dir = cache_dir
         self.blocks = {}
         self.featurise_seconds = 0.0
+
+        # Sanity: the leaderboard's own guarantee is that test molecules are held
+        # out by scaffold, but TDC issue #217 reported duplicate molecules across
+        # train_val/test. Record the overlap instead of silently relying on it.
+        tv = set(self.train_val["Drug"])
+        te = set(self.test["Drug"])
+        self.smiles_overlap = len(tv & te)
+
         if blocks:
             self.load_blocks(blocks)
 
@@ -110,13 +118,6 @@ class TaskData:
             if block not in self.blocks:
                 self.blocks[block] = features.compute_block(block, self.unique, self.cache_dir)
         self.featurise_seconds += time.time() - t0
-
-        # Sanity: the leaderboard's own guarantee is that test molecules are held
-        # out by scaffold, but TDC issue #217 reported duplicate molecules across
-        # train_val/test. Record the overlap instead of silently relying on it.
-        tv = set(self.train_val["Drug"])
-        te = set(self.test["Drug"])
-        self.smiles_overlap = len(tv & te)
 
     def X(self, smiles_series, feature_set: str) -> np.ndarray:
         blocks = models.FEATURE_SETS[feature_set]

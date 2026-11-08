@@ -2,6 +2,36 @@
  "generated_from_leaderboards": "leaderboards_2026-11-08.json",
  "rows": [
   {
+   "task": "bbb_martins",
+   "metric": "roc-auc",
+   "mean": 0.914,
+   "std": 0.006,
+   "would_be_rank": 5,
+   "of": 27,
+   "listed_better_than_us": 4,
+   "selected_members": [
+    "wide-lgbm-base",
+    "dma-lgbm-base",
+    "dma-lgbm-deep",
+    "dm-lgbm-base"
+   ],
+   "wall_seconds": 1040.0
+  },
+  {
+   "task": "bioavailability_ma",
+   "metric": "roc-auc",
+   "mean": 0.725,
+   "std": 0.021,
+   "would_be_rank": 21,
+   "of": 21,
+   "listed_better_than_us": 20,
+   "selected_members": [
+    "dm-lgbm-base",
+    "wide-lgbm-base"
+   ],
+   "wall_seconds": 88.0
+  },
+  {
    "task": "caco2_wang",
    "metric": "mae",
    "mean": 0.291,

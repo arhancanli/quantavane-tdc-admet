@@ -1,0 +1,74 @@
+{
+ "task": "vdss_lombardo",
+ "metric": "spearman",
+ "higher_is_better": true,
+ "mean": 0.484,
+ "std": 0.032,
+ "per_seed": [
+  0.443,
+  0.538,
+  0.473,
+  0.495,
+  0.469
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.4541890989752649,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.4541890989752649
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.4541890989752649,
+    "inner_std": 0.02598013859926584,
+    "inner_folds": [
+     0.4298202938739253,
+     0.4901867836580829,
+     0.44256021939378654
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 42.8254177570343
+  }
+ },
+ "dataset": {
+  "train_val": 904,
+  "test": 226,
+  "unique_smiles": 1111,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "wall_seconds": 94.8,
+ "finished_utc": "2026-11-08T17:08:23Z"
+}

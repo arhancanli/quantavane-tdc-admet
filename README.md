@@ -52,11 +52,13 @@ because PyTDC imports `pkg_resources`. Neither affects the benchmark path.
 
 ## Results
 
-All 13 tasks run so far, under the official five-seed protocol. "Board top"
+All 15 tasks run so far, under the official five-seed protocol. "Board top"
 is the best listed entry on that task's public page on 8 November 2026.
 
 | Task | Metric | This code | Board top 3 | Would-be rank | Selected model |
 |---|---|---|---|---|---|
+| bbb_martins | AUROC | 0.914 ± 0.006 | MiniMol 0.924; CFA 0.92; MapLight 0.916 | **5 of 27** | wide-lgbm-base + dma-lgbm-base + dma-lgbm-deep + dm-lgbm-base |
+| bioavailability_ma | AUROC | 0.725 ± 0.021 | MiniMol 0.942; MapLight + GNN 0.938; ZairaChem 0.935 | **21 of 21** | dm-lgbm-base + wide-lgbm-base |
 | caco2_wang | MAE | 0.291 ± 0.005 | CaliciBoost 0.256; XG Boost 0.274; MapLight 0.276 | **8 of 25** | dma-lgbm-shallow + dma-lgbm-base |
 | clearance_hepatocyte_az | Spearman | 0.455 ± 0.013 | CFA 0.536; MapLight + GNN 0.498; MapLight 0.466 | **4 of 19** | dma-et-base-log + wide-lgbm-base-log |
 | clearance_microsome_az | Spearman | 0.583 ± 0.009 | MapLight + GNN 0.63; MiniMol 0.628; MapLight 0.626 | **10 of 21** | dma-lgbm-shallow-log + wide-lgbm-base-log + dma-lgbm-deep-log |
@@ -95,9 +97,11 @@ whether the search earns its keep, and on these tasks the answer is mixed.
 
 | Task | Metric | Selection ensemble | One fixed config | Inner CV says | Test says |
 |---|---|---|---|---|---|
+| caco2_wang | MAE | 0.291 ± 0.005 | 0.299 ± 0.013 | ensemble | ensemble |
 | dili | AUROC | 0.881 ± 0.021 | 0.879 ± 0.009 | ensemble | ensemble |
 | herg | AUROC | 0.836 ± 0.007 | 0.844 ± 0.008 | ensemble | fixed config |
 | hia_hou | AUROC | 0.987 ± 0.002 | 0.983 ± 0.003 | ensemble | ensemble |
+| vdss_lombardo | Spearman | 0.702 ± 0.010 | 0.484 ± 0.032 | ensemble | ensemble |
 
 The reported number is always the model inner CV picked, even where the control
 scored better on test.
