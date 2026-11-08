@@ -1,0 +1,27 @@
+PyTDC==1.1.15
+rdkit==2026.9.1
+lightgbm==4.7.0
+catboost==1.2.10
+scikit-learn==1.9.1
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+setuptools==80.10.2
+packaging==26.3
+huggingface_hub==2.4.0
+fuzzywuzzy==0.18.0
+requests==2.34.2
+tqdm==4.70.1
+# Install notes (see README):
+#   PyTDC must go in with --no-deps: its tiledbsoma -> pyarrow 12.0.1 chain has no
+#   Python 3.12 wheel and fails to build. The ADMET benchmark path needs none of it.
+#   setuptools must stay below 81, because PyTDC imports pkg_resources.
+#   LightGBM on macOS additionally needs code/setup_libomp.sh (or `brew install libomp`).
+#
+# Optional, only for the TabPFN candidate (`desc-tabpfn-base`). Keep these in a
+# second environment: the TabPFN package pulls torch, and nothing else here needs it.
+#   tabpfn==9.2.0 (installed with --no-deps), einops, pydantic, pydantic_settings,
+#   safetensors, skrub, torch
+# The TabPFN v2 checkpoints are not in this repository. Point TABPFN_CKPT and
+# TABPFN_CKPT_CLF at your own copies; models.py refuses to run the candidate without
+# them rather than silently downloading a different version of the weights.

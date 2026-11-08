@@ -1,0 +1,171 @@
+{
+ "task": "pgp_broccatelli",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "mean": 0.91,
+ "std": 0.015,
+ "per_seed": [
+  0.924,
+  0.903,
+  0.884,
+  0.917,
+  0.924
+ ],
+ "selected_members": [
+  "dma-lgbm-deep",
+  "dma-lgbm-shallow",
+  "dma-lgbm-base",
+  "dma-et-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "deep",
+   "log_target": false,
+   "id": "dma-lgbm-deep"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "shallow",
+   "log_target": false,
+   "id": "dma-lgbm-shallow"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  },
+  {
+   "features": "dma",
+   "learner": "et",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-et-base"
+  }
+ ],
+ "selected_inner_mean": 0.9332934516047012,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dm-lgbm-base": 0.9244765138653085,
+   "dma-lgbm-base": 0.9303088834756363,
+   "wide-lgbm-base": 0.9276321940897123,
+   "dma-lgbm-deep": 0.9332084594375138,
+   "dma-lgbm-shallow": 0.9314852406846944,
+   "dma-et-base": 0.929653551831894
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-deep"
+    ],
+    "inner_mean": 0.9332084594375138,
+    "inner_std": 0.03149206430655001,
+    "inner_folds": [
+     0.9625286041189932,
+     0.9475806451612903,
+     0.8895161290322581
+    ]
+   },
+   {
+    "members": [
+     "dma-lgbm-deep",
+     "dma-lgbm-shallow"
+    ],
+    "inner_mean": 0.9329264166728182,
+    "inner_std": 0.034262312603431495,
+    "inner_folds": [
+     0.9641018306636155,
+     0.9494623655913978,
+     0.8852150537634409
+    ]
+   },
+   {
+    "members": [
+     "dma-lgbm-deep",
+     "dma-lgbm-shallow",
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.9331314641207976,
+    "inner_std": 0.034553011852420996,
+    "inner_folds": [
+     0.9653890160183066,
+     0.9487903225806451,
+     0.8852150537634408
+    ]
+   },
+   {
+    "members": [
+     "dma-lgbm-deep",
+     "dma-lgbm-shallow",
+     "dma-lgbm-base",
+     "dma-et-base"
+    ],
+    "inner_mean": 0.9332934516047012,
+    "inner_std": 0.03260193376420404,
+    "inner_folds": [
+     0.9645308924485126,
+     0.9470430107526882,
+     0.8883064516129032
+    ]
+   },
+   {
+    "members": [
+     "dma-lgbm-deep",
+     "dma-lgbm-shallow",
+     "dma-lgbm-base",
+     "dma-et-base",
+     "wide-lgbm-base"
+    ],
+    "inner_mean": 0.9327224969858025,
+    "inner_std": 0.033115198131108935,
+    "inner_folds": [
+     0.9651029748283753,
+     0.9458333333333333,
+     0.8872311827956989
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dm-lgbm-base": 47.845675230026245,
+   "dma-lgbm-base": 48.34495711326599,
+   "wide-lgbm-base": 57.51885390281677,
+   "dma-lgbm-deep": 93.83026361465454,
+   "dma-lgbm-shallow": 40.434935092926025,
+   "dma-et-base": 0.8828272819519043
+  }
+ },
+ "dataset": {
+  "train_val": 973,
+  "test": 245,
+  "unique_smiles": 1212,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dm-lgbm-base",
+  "dma-lgbm-base",
+  "wide-lgbm-base",
+  "dma-lgbm-deep",
+  "dma-lgbm-shallow",
+  "dma-et-base"
+ ],
+ "wall_seconds": 679.4,
+ "finished_utc": "2026-11-08T16:50:29Z"
+}

@@ -1,0 +1,2811 @@
+{
+ "_about": "TDC ADMET group leaderboards, transcribed from the public task pages on 2026-11-08 (Dubai afternoon). Reference data only: used to compute where our result would rank. Values are exactly as the pages printed them.",
+ "_read_utc": "2026-11-08 (9 tasks early, the other 13 at about 16:45 UTC)",
+ "_source_pattern": "https://tdcommons.ai/benchmark/admet_group/<slug>/",
+ "_note_direction": "The Clearance_Hepatocyte_AZ page footer reads 'The lower the better' while its metric is Spearman and its rows are sorted descending. TDC's own tdc.metadata.admet_metrics gives 'spearman' for this task, so higher is better; the footer is a page error (the venue notes flag the same inconsistency on the LD50 page).",
+ "tasks": {
+  "caco2_wang": {
+   "slug": "01caco2",
+   "metric": "mae",
+   "higher_is_better": false,
+   "rows": [
+    [
+     1,
+     "CaliciBoost",
+     0.256,
+     0.006
+    ],
+    [
+     2,
+     "XG Boost",
+     0.274,
+     0.004
+    ],
+    [
+     3,
+     "MapLight",
+     0.276,
+     0.005
+    ],
+    [
+     4,
+     "BaseBoosting",
+     0.285,
+     0.005
+    ],
+    [
+     5,
+     "MolMapNet-D",
+     0.287,
+     0.005
+    ],
+    [
+     6,
+     "MapLight + GNN",
+     0.287,
+     0.005
+    ],
+    [
+     7,
+     "XGBoost",
+     0.289,
+     0.011
+    ],
+    [
+     8,
+     "DeepMol (AutoML)",
+     0.297,
+     0.008
+    ],
+    [
+     9,
+     "Basic ML",
+     0.321,
+     0.005
+    ],
+    [
+     10,
+     "ADMETrix",
+     0.326,
+     0.042
+    ],
+    [
+     11,
+     "Chemprop-RDKit",
+     0.33,
+     0.024
+    ],
+    [
+     12,
+     "CFA",
+     0.335,
+     0.033
+    ],
+    [
+     13,
+     "Euclia ML model",
+     0.341,
+     0.004
+    ],
+    [
+     14,
+     "Chemprop",
+     0.344,
+     0.015
+    ],
+    [
+     15,
+     "MiniMol",
+     0.35,
+     0.018
+    ],
+    [
+     16,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.393,
+     0.024
+    ],
+    [
+     17,
+     "AttentiveFP",
+     0.401,
+     0.032
+    ],
+    [
+     18,
+     "CNN (DeepPurpose)",
+     0.446,
+     0.036
+    ],
+    [
+     19,
+     "ContextPred",
+     0.502,
+     0.036
+    ],
+    [
+     20,
+     "NeuralFP",
+     0.53,
+     0.102
+    ],
+    [
+     21,
+     "AttrMasking",
+     0.546,
+     0.052
+    ],
+    [
+     22,
+     "GCN",
+     0.599,
+     0.104
+    ],
+    [
+     23,
+     "Morgan + MLP (DeepPurpose)",
+     0.908,
+     0.06
+    ],
+    [
+     24,
+     "admet_ai_v2",
+     6.328,
+     0.101
+    ]
+   ]
+  },
+  "ppbr_az": {
+   "slug": "08ppbr",
+   "metric": "mae",
+   "higher_is_better": false,
+   "rows": [
+    [
+     1,
+     "Gradient Boost",
+     7.44,
+     0.024
+    ],
+    [
+     2,
+     "MapLight + GNN",
+     7.526,
+     0.106
+    ],
+    [
+     3,
+     "MapLight",
+     7.66,
+     0.058
+    ],
+    [
+     4,
+     "MiniMol",
+     7.696,
+     0.125
+    ],
+    [
+     5,
+     "Chemprop",
+     7.788,
+     0.21
+    ],
+    [
+     6,
+     "BaseBoosting KyQVZ6b2",
+     7.914,
+     0.096
+    ],
+    [
+     7,
+     "DeepMol (AutoML)",
+     7.99,
+     0.104
+    ],
+    [
+     8,
+     "ADMETrix",
+     8.2,
+     0.114
+    ],
+    [
+     9,
+     "Chemprop-RDKit",
+     8.288,
+     0.173
+    ],
+    [
+     10,
+     "CFA",
+     8.68,
+     0.262
+    ],
+    [
+     11,
+     "Basic ML",
+     9.185,
+     0.0
+    ],
+    [
+     12,
+     "NeuralFP",
+     9.292,
+     0.384
+    ],
+    [
+     13,
+     "AttentiveFP",
+     9.373,
+     0.335
+    ],
+    [
+     14,
+     "ContextPred",
+     9.445,
+     0.224
+    ],
+    [
+     15,
+     "Euclia ML model",
+     9.942,
+     0.121
+    ],
+    [
+     16,
+     "RDKit2D + MLP (DeepPurpose)",
+     9.994,
+     0.319
+    ],
+    [
+     17,
+     "AttrMasking",
+     10.075,
+     0.202
+    ],
+    [
+     18,
+     "GCN",
+     10.194,
+     0.373
+    ],
+    [
+     19,
+     "CNN (DeepPurpose)",
+     11.106,
+     0.358
+    ],
+    [
+     20,
+     "Morgan + MLP (DeepPurpose)",
+     12.848,
+     0.362
+    ]
+   ]
+  },
+  "vdss_lombardo": {
+   "slug": "09vdss",
+   "metric": "spearman",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.713,
+     0.007
+    ],
+    [
+     2,
+     "MapLight",
+     0.707,
+     0.009
+    ],
+    [
+     3,
+     "CFA",
+     0.628,
+     0.023
+    ],
+    [
+     4,
+     "Basic ML",
+     0.627,
+     0.01
+    ],
+    [
+     5,
+     "Euclia ML model",
+     0.609,
+     0.014
+    ],
+    [
+     6,
+     "SimGCN",
+     0.582,
+     0.031
+    ],
+    [
+     7,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.561,
+     0.025
+    ],
+    [
+     8,
+     "AttrMasking",
+     0.559,
+     0.019
+    ],
+    [
+     9,
+     "MiniMol",
+     0.535,
+     0.027
+    ],
+    [
+     10,
+     "DeepMol (AutoML)",
+     0.497,
+     0.011
+    ],
+    [
+     11,
+     "Morgan + MLP (DeepPurpose)",
+     0.493,
+     0.011
+    ],
+    [
+     12,
+     "Chemprop",
+     0.491,
+     0.046
+    ],
+    [
+     13,
+     "ContextPred",
+     0.485,
+     0.092
+    ],
+    [
+     14,
+     "ADMETrix",
+     0.475,
+     0.022
+    ],
+    [
+     15,
+     "GCN",
+     0.457,
+     0.05
+    ],
+    [
+     16,
+     "Chemprop-RDKit",
+     0.389,
+     0.075
+    ],
+    [
+     17,
+     "NeuralFP",
+     0.258,
+     0.162
+    ],
+    [
+     18,
+     "AttentiveFP",
+     0.241,
+     0.145
+    ],
+    [
+     19,
+     "CNN (DeepPurpose)",
+     0.226,
+     0.114
+    ]
+   ]
+  },
+  "half_life_obach": {
+   "slug": "16halflife",
+   "metric": "spearman",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "CFA",
+     0.576,
+     0.025
+    ],
+    [
+     2,
+     "MapLight",
+     0.562,
+     0.008
+    ],
+    [
+     3,
+     "MapLight + GNN",
+     0.557,
+     0.034
+    ],
+    [
+     4,
+     "Euclia ML model",
+     0.547,
+     0.032
+    ],
+    [
+     5,
+     "Voting Regressor (KNN, SVM)",
+     0.544,
+     0.034
+    ],
+    [
+     6,
+     "MiniMol",
+     0.495,
+     0.042
+    ],
+    [
+     7,
+     "DeepMol (AutoML)",
+     0.485,
+     0.039
+    ],
+    [
+     8,
+     "Basic ML",
+     0.438,
+     0.011
+    ],
+    [
+     9,
+     "SimGCN",
+     0.392,
+     0.065
+    ],
+    [
+     10,
+     "ADMETrix",
+     0.372,
+     0.026
+    ],
+    [
+     11,
+     "Morgan + MLP (DeepPurpose)",
+     0.329,
+     0.083
+    ],
+    [
+     12,
+     "Chemprop",
+     0.265,
+     0.032
+    ],
+    [
+     13,
+     "Chemprop-RDKit",
+     0.239,
+     0.019
+    ],
+    [
+     14,
+     "GCN",
+     0.239,
+     0.1
+    ],
+    [
+     15,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.184,
+     0.111
+    ],
+    [
+     16,
+     "NeuralFP",
+     0.177,
+     0.165
+    ],
+    [
+     17,
+     "AttrMasking",
+     0.151,
+     0.068
+    ],
+    [
+     18,
+     "ContextPred",
+     0.129,
+     0.114
+    ],
+    [
+     19,
+     "AttentiveFP",
+     0.085,
+     0.068
+    ],
+    [
+     20,
+     "CNN (DeepPurpose)",
+     0.038,
+     0.138
+    ]
+   ]
+  },
+  "clearance_hepatocyte_az": {
+   "slug": "17clhepa",
+   "metric": "spearman",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "CFA",
+     0.536,
+     0.02
+    ],
+    [
+     2,
+     "MapLight + GNN",
+     0.498,
+     0.009
+    ],
+    [
+     3,
+     "MapLight",
+     0.466,
+     0.012
+    ],
+    [
+     4,
+     "ADMETrix",
+     0.447,
+     0.028
+    ],
+    [
+     5,
+     "MiniMol",
+     0.446,
+     0.029
+    ],
+    [
+     6,
+     "Basic ML",
+     0.44,
+     0.003
+    ],
+    [
+     7,
+     "DeepMol (AutoML)",
+     0.44,
+     0.011
+    ],
+    [
+     8,
+     "ContextPred",
+     0.439,
+     0.026
+    ],
+    [
+     9,
+     "Chemprop",
+     0.431,
+     0.006
+    ],
+    [
+     10,
+     "Chemprop-RDKit",
+     0.43,
+     0.021
+    ],
+    [
+     11,
+     "Euclia ML model",
+     0.424,
+     0.008
+    ],
+    [
+     12,
+     "AttrMasking",
+     0.413,
+     0.028
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.401,
+     0.037
+    ],
+    [
+     14,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.382,
+     0.007
+    ],
+    [
+     15,
+     "GCN",
+     0.366,
+     0.063
+    ],
+    [
+     16,
+     "AttentiveFP",
+     0.289,
+     0.022
+    ],
+    [
+     17,
+     "Morgan + MLP (DeepPurpose)",
+     0.272,
+     0.068
+    ],
+    [
+     18,
+     "CNN (DeepPurpose)",
+     0.235,
+     0.021
+    ]
+   ]
+  },
+  "clearance_microsome_az": {
+   "slug": "18clmicro",
+   "metric": "spearman",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.63,
+     0.01
+    ],
+    [
+     2,
+     "MiniMol",
+     0.628,
+     0.005
+    ],
+    [
+     3,
+     "MapLight",
+     0.626,
+     0.008
+    ],
+    [
+     4,
+     "CFA",
+     0.625,
+     0.012
+    ],
+    [
+     5,
+     "RFStacker",
+     0.625,
+     0.002
+    ],
+    [
+     6,
+     "Chemprop-RDKit",
+     0.599,
+     0.025
+    ],
+    [
+     7,
+     "SimGCN",
+     0.597,
+     0.025
+    ],
+    [
+     8,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.586,
+     0.014
+    ],
+    [
+     9,
+     "AttrMasking",
+     0.585,
+     0.034
+    ],
+    [
+     10,
+     "ContextPred",
+     0.578,
+     0.007
+    ],
+    [
+     11,
+     "Euclia ML model",
+     0.572,
+     0.01
+    ],
+    [
+     12,
+     "ADMETrix",
+     0.556,
+     0.015
+    ],
+    [
+     13,
+     "Chemprop",
+     0.555,
+     0.022
+    ],
+    [
+     14,
+     "DeepMol (AutoML)",
+     0.553,
+     0.013
+    ],
+    [
+     15,
+     "GCN",
+     0.532,
+     0.033
+    ],
+    [
+     16,
+     "NeuralFP",
+     0.529,
+     0.015
+    ],
+    [
+     17,
+     "Basic ML",
+     0.518,
+     0.005
+    ],
+    [
+     18,
+     "Morgan + MLP (DeepPurpose)",
+     0.492,
+     0.02
+    ],
+    [
+     19,
+     "AttentiveFP",
+     0.365,
+     0.055
+    ],
+    [
+     20,
+     "CNN (DeepPurpose)",
+     0.252,
+     0.116
+    ]
+   ]
+  },
+  "cyp2c9_substrate_carbonmangels": {
+   "slug": "13cyp2c9s",
+   "metric": "pr-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.474,
+     0.025
+    ],
+    [
+     2,
+     "ZairaChem",
+     0.441,
+     0.033
+    ],
+    [
+     3,
+     "MapLight + GNN",
+     0.437,
+     0.008
+    ],
+    [
+     4,
+     "Random Forest",
+     0.437,
+     0.022
+    ],
+    [
+     5,
+     "SimGCN",
+     0.433,
+     0.017
+    ],
+    [
+     6,
+     "CFA",
+     0.417,
+     0.01
+    ],
+    [
+     7,
+     "DeepMol (AutoML)",
+     0.417,
+     0.005
+    ],
+    [
+     8,
+     "MapLight",
+     0.415,
+     0.008
+    ],
+    [
+     9,
+     "Chemprop-RDKit",
+     0.4,
+     0.008
+    ],
+    [
+     10,
+     "ContextPred",
+     0.392,
+     0.026
+    ],
+    [
+     11,
+     "Chemprop",
+     0.382,
+     0.019
+    ],
+    [
+     12,
+     "AttrMasking",
+     0.381,
+     0.045
+    ],
+    [
+     13,
+     "Morgan + MLP (DeepPurpose)",
+     0.38,
+     0.015
+    ],
+    [
+     14,
+     "AttentiveFP",
+     0.375,
+     0.032
+    ],
+    [
+     15,
+     "CNN (DeepPurpose)",
+     0.367,
+     0.059
+    ],
+    [
+     16,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.36,
+     0.04
+    ],
+    [
+     17,
+     "NeuralFP",
+     0.359,
+     0.059
+    ],
+    [
+     18,
+     "Euclia ML model",
+     0.347,
+     0.018
+    ],
+    [
+     19,
+     "GCN",
+     0.344,
+     0.051
+    ],
+    [
+     20,
+     "Basic ML",
+     0.281,
+     0.0
+    ]
+   ]
+  },
+  "cyp2d6_substrate_carbonmangels": {
+   "slug": "14cyp2d6s",
+   "metric": "pr-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "ContextPred",
+     0.736,
+     0.024
+    ],
+    [
+     2,
+     "DeepMol (AutoML)",
+     0.731,
+     0.037
+    ],
+    [
+     3,
+     "MapLight + GNN",
+     0.72,
+     0.002
+    ],
+    [
+     4,
+     "MapLight",
+     0.713,
+     0.009
+    ],
+    [
+     5,
+     "CFA",
+     0.704,
+     0.015
+    ],
+    [
+     6,
+     "AttrMasking",
+     0.704,
+     0.028
+    ],
+    [
+     7,
+     "MiniMol",
+     0.695,
+     0.032
+    ],
+    [
+     8,
+     "Chemprop-RDKit",
+     0.686,
+     0.031
+    ],
+    [
+     9,
+     "ZairaChem",
+     0.685,
+     0.029
+    ],
+    [
+     10,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.677,
+     0.047
+    ],
+    [
+     11,
+     "Morgan + MLP (DeepPurpose)",
+     0.671,
+     0.066
+    ],
+    [
+     12,
+     "Chemprop",
+     0.632,
+     0.037
+    ],
+    [
+     13,
+     "GCN",
+     0.617,
+     0.039
+    ],
+    [
+     14,
+     "AttentiveFP",
+     0.574,
+     0.03
+    ],
+    [
+     15,
+     "NeuralFP",
+     0.572,
+     0.062
+    ],
+    [
+     16,
+     "Euclia ML model",
+     0.498,
+     0.015
+    ],
+    [
+     17,
+     "CNN (DeepPurpose)",
+     0.485,
+     0.037
+    ],
+    [
+     18,
+     "Basic ML",
+     0.478,
+     0.018
+    ]
+   ]
+  },
+  "cyp3a4_substrate_carbonmangels": {
+   "slug": "15cyp3a4s",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "CFA",
+     0.667,
+     0.019
+    ],
+    [
+     2,
+     "MiniMol",
+     0.663,
+     0.008
+    ],
+    [
+     3,
+     "CNN (DeepPurpose)",
+     0.662,
+     0.031
+    ],
+    [
+     4,
+     "DeepMol (AutoML)",
+     0.655,
+     0.003
+    ],
+    [
+     5,
+     "MapLight",
+     0.65,
+     0.006
+    ],
+    [
+     6,
+     "MapLight + GNN",
+     0.647,
+     0.008
+    ],
+    [
+     7,
+     "SimGCN",
+     0.64,
+     0.016
+    ],
+    [
+     8,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.639,
+     0.012
+    ],
+    [
+     9,
+     "Morgan + MLP (DeepPurpose)",
+     0.633,
+     0.013
+    ],
+    [
+     10,
+     "ZairaChem",
+     0.63,
+     0.008
+    ],
+    [
+     11,
+     "Euclia ML model",
+     0.629,
+     0.027
+    ],
+    [
+     12,
+     "Chemprop-RDKit",
+     0.619,
+     0.03
+    ],
+    [
+     13,
+     "ContextPred",
+     0.609,
+     0.025
+    ],
+    [
+     14,
+     "Basic ML",
+     0.605,
+     0.0
+    ],
+    [
+     15,
+     "Chemprop",
+     0.596,
+     0.018
+    ],
+    [
+     16,
+     "GCN",
+     0.59,
+     0.023
+    ],
+    [
+     17,
+     "AttrMasking",
+     0.582,
+     0.021
+    ],
+    [
+     18,
+     "NeuralFP",
+     0.578,
+     0.02
+    ],
+    [
+     19,
+     "AttentiveFP",
+     0.576,
+     0.025
+    ]
+   ]
+  },
+  "hia_hou": {
+   "slug": "02hia",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.993,
+     0.005
+    ],
+    [
+     2,
+     "DeepMol (AutoML)",
+     0.99,
+     0.002
+    ],
+    [
+     3,
+     "MapLight + GNN",
+     0.989,
+     0.001
+    ],
+    [
+     4,
+     "RFStacker",
+     0.988,
+     0.002
+    ],
+    [
+     5,
+     "MapLight",
+     0.986,
+     0.0
+    ],
+    [
+     6,
+     "ADMETrix",
+     0.985,
+     0.003
+    ],
+    [
+     7,
+     "Chemprop-RDKit",
+     0.981,
+     0.002
+    ],
+    [
+     8,
+     "CFA",
+     0.981,
+     0.009
+    ],
+    [
+     9,
+     "AttrMasking",
+     0.978,
+     0.006
+    ],
+    [
+     10,
+     "ContextPred",
+     0.975,
+     0.004
+    ],
+    [
+     11,
+     "AttentiveFP",
+     0.974,
+     0.007
+    ],
+    [
+     12,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.972,
+     0.008
+    ],
+    [
+     13,
+     "Chemprop",
+     0.965,
+     0.005
+    ],
+    [
+     14,
+     "ZairaChem",
+     0.948,
+     0.018
+    ],
+    [
+     15,
+     "NeuralFP",
+     0.943,
+     0.014
+    ],
+    [
+     16,
+     "GCN",
+     0.936,
+     0.024
+    ],
+    [
+     17,
+     "Euclia ML model",
+     0.926,
+     0.017
+    ],
+    [
+     18,
+     "CNN (DeepPurpose)",
+     0.869,
+     0.026
+    ],
+    [
+     19,
+     "Basic ML",
+     0.818,
+     0.01
+    ],
+    [
+     20,
+     "Morgan + MLP (DeepPurpose)",
+     0.807,
+     0.072
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "pgp_broccatelli": {
+   "slug": "03pgp",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.938,
+     0.002
+    ],
+    [
+     2,
+     "ZairaChem",
+     0.935,
+     0.006
+    ],
+    [
+     3,
+     "MapLight",
+     0.93,
+     0.002
+    ],
+    [
+     4,
+     "SimGCN",
+     0.929,
+     0.01
+    ],
+    [
+     5,
+     "AttrMasking",
+     0.929,
+     0.006
+    ],
+    [
+     6,
+     "ContextPred",
+     0.923,
+     0.005
+    ],
+    [
+     7,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.918,
+     0.007
+    ],
+    [
+     8,
+     "CNN (DeepPurpose)",
+     0.908,
+     0.012
+    ],
+    [
+     9,
+     "NeuralFP",
+     0.902,
+     0.02
+    ],
+    [
+     10,
+     "GCN",
+     0.895,
+     0.021
+    ],
+    [
+     11,
+     "AttentiveFP",
+     0.892,
+     0.012
+    ],
+    [
+     12,
+     "Chemprop-RDKit",
+     0.886,
+     0.016
+    ],
+    [
+     13,
+     "Morgan + MLP (DeepPurpose)",
+     0.88,
+     0.006
+    ],
+    [
+     14,
+     "Chemprop",
+     0.86,
+     0.036
+    ],
+    [
+     15,
+     "Euclia ML model",
+     0.845,
+     0.003
+    ],
+    [
+     16,
+     "Basic ML",
+     0.818,
+     0.0
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "bioavailability_ma": {
+   "slug": "04bioav",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.942,
+     0.002
+    ],
+    [
+     2,
+     "MapLight + GNN",
+     0.938,
+     0.002
+    ],
+    [
+     3,
+     "ZairaChem",
+     0.935,
+     0.006
+    ],
+    [
+     4,
+     "MapLight",
+     0.93,
+     0.002
+    ],
+    [
+     5,
+     "SimGCN",
+     0.929,
+     0.01
+    ],
+    [
+     6,
+     "AttrMasking",
+     0.929,
+     0.006
+    ],
+    [
+     7,
+     "CFA",
+     0.928,
+     0.008
+    ],
+    [
+     8,
+     "ADMETrix",
+     0.926,
+     0.008
+    ],
+    [
+     9,
+     "ContextPred",
+     0.923,
+     0.005
+    ],
+    [
+     10,
+     "DeepMol (AutoML)",
+     0.922,
+     0.0
+    ],
+    [
+     11,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.918,
+     0.007
+    ],
+    [
+     12,
+     "CNN (DeepPurpose)",
+     0.908,
+     0.012
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.902,
+     0.02
+    ],
+    [
+     14,
+     "GCN",
+     0.895,
+     0.021
+    ],
+    [
+     15,
+     "AttentiveFP",
+     0.892,
+     0.012
+    ],
+    [
+     16,
+     "Chemprop-RDKit",
+     0.886,
+     0.016
+    ],
+    [
+     17,
+     "Morgan + MLP (DeepPurpose)",
+     0.88,
+     0.006
+    ],
+    [
+     18,
+     "Chemprop",
+     0.86,
+     0.036
+    ],
+    [
+     19,
+     "Euclia ML model",
+     0.845,
+     0.003
+    ],
+    [
+     20,
+     "Basic ML",
+     0.818,
+     0.0
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ",
+   "_warning": "This board duplicates the Pgp_Broccatelli table from rank 3 down (TDC issue #394, open, checked 8 Nov). Treat its ranks as unusable; do not target this task."
+  },
+  "lipophilicity_astrazeneca": {
+   "slug": "05lipo",
+   "metric": "mae",
+   "higher_is_better": false,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.456,
+     0.008
+    ],
+    [
+     2,
+     "Chemprop-RDKit",
+     0.467,
+     0.006
+    ],
+    [
+     3,
+     "Chemprop",
+     0.47,
+     0.009
+    ],
+    [
+     4,
+     "BaseBoosting KyQVZ6b2",
+     0.479,
+     0.007
+    ],
+    [
+     5,
+     "ADMETrix",
+     0.512,
+     0.01
+    ],
+    [
+     6,
+     "CMPNN",
+     0.515,
+     0.008
+    ],
+    [
+     7,
+     "MapLight + GNN",
+     0.525,
+     0.003
+    ],
+    [
+     8,
+     "ContextPred",
+     0.535,
+     0.012
+    ],
+    [
+     9,
+     "StackingRegressor (DeepMol)",
+     0.538,
+     0.001
+    ],
+    [
+     10,
+     "MapLight",
+     0.539,
+     0.002
+    ],
+    [
+     11,
+     "GCN",
+     0.541,
+     0.011
+    ],
+    [
+     12,
+     "AttrMasking",
+     0.547,
+     0.024
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.563,
+     0.023
+    ],
+    [
+     14,
+     "AttentiveFP",
+     0.572,
+     0.007
+    ],
+    [
+     15,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.574,
+     0.017
+    ],
+    [
+     16,
+     "Basic ML",
+     0.617,
+     0.003
+    ],
+    [
+     17,
+     "Euclia ML model",
+     0.621,
+     0.005
+    ],
+    [
+     18,
+     "CFA",
+     0.626,
+     0.013
+    ],
+    [
+     19,
+     "DeepMol (AutoML)",
+     0.656,
+     0.012
+    ],
+    [
+     20,
+     "Morgan + MLP (DeepPurpose)",
+     0.701,
+     0.009
+    ],
+    [
+     21,
+     "CNN (DeepPurpose)",
+     0.743,
+     0.02
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "solubility_aqsoldb": {
+   "slug": "06aqsol",
+   "metric": "mae",
+   "higher_is_better": false,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.741,
+     0.013
+    ],
+    [
+     2,
+     "Chemprop-RDKit",
+     0.761,
+     0.025
+    ],
+    [
+     3,
+     "DeepMol (AutoML)",
+     0.775,
+     0.006
+    ],
+    [
+     4,
+     "AttentiveFP",
+     0.776,
+     0.008
+    ],
+    [
+     5,
+     "MapLight + GNN",
+     0.789,
+     0.003
+    ],
+    [
+     6,
+     "MapLight",
+     0.792,
+     0.002
+    ],
+    [
+     7,
+     "CMPNN",
+     0.796,
+     0.038
+    ],
+    [
+     8,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.827,
+     0.047
+    ],
+    [
+     9,
+     "Basic ML",
+     0.828,
+     0.002
+    ],
+    [
+     10,
+     "Chemprop",
+     0.829,
+     0.022
+    ],
+    [
+     11,
+     "GCN",
+     0.907,
+     0.02
+    ],
+    [
+     12,
+     "CFA",
+     0.939,
+     0.03
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.947,
+     0.016
+    ],
+    [
+     14,
+     "CNN (DeepPurpose)",
+     1.023,
+     0.023
+    ],
+    [
+     15,
+     "AttrMasking",
+     1.026,
+     0.02
+    ],
+    [
+     16,
+     "ContextPred",
+     1.04,
+     0.045
+    ],
+    [
+     17,
+     "Euclia ML model",
+     1.076,
+     0.016
+    ],
+    [
+     18,
+     "Morgan + MLP (DeepPurpose)",
+     1.203,
+     0.019
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "bbb_martins": {
+   "slug": "07bbb",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.924,
+     0.003
+    ],
+    [
+     2,
+     "CFA",
+     0.92,
+     0.006
+    ],
+    [
+     3,
+     "MapLight",
+     0.916,
+     0.001
+    ],
+    [
+     4,
+     "Lantern RADR Ensemble",
+     0.915,
+     0.002
+    ],
+    [
+     5,
+     "MapLight + GNN",
+     0.913,
+     0.001
+    ],
+    [
+     6,
+     "Lantern RADR Deep Neural Network",
+     0.912,
+     0.003
+    ],
+    [
+     7,
+     "ZairaChem",
+     0.91,
+     0.024
+    ],
+    [
+     8,
+     "Lantern RADR Random Forest",
+     0.908,
+     0.002
+    ],
+    [
+     9,
+     "ADMETrix",
+     0.906,
+     0.035
+    ],
+    [
+     10,
+     "Lantern RADR SVM",
+     0.905,
+     0.007
+    ],
+    [
+     11,
+     "Lantern RADR Logistic Regression",
+     0.903,
+     0.002
+    ],
+    [
+     12,
+     "SimGCN",
+     0.901,
+     0.007
+    ],
+    [
+     13,
+     "ContextPred",
+     0.897,
+     0.004
+    ],
+    [
+     14,
+     "AttrMasking",
+     0.892,
+     0.012
+    ],
+    [
+     15,
+     "CMPNN",
+     0.89,
+     0.016
+    ],
+    [
+     16,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.889,
+     0.016
+    ],
+    [
+     17,
+     "Chemprop-RDKit",
+     0.869,
+     0.027
+    ],
+    [
+     18,
+     "DeepMol (AutoML)",
+     0.868,
+     0.007
+    ],
+    [
+     19,
+     "AttentiveFP",
+     0.855,
+     0.011
+    ],
+    [
+     20,
+     "GCN",
+     0.842,
+     0.016
+    ],
+    [
+     21,
+     "NeuralFP",
+     0.836,
+     0.009
+    ],
+    [
+     22,
+     "Morgan + MLP (DeepPurpose)",
+     0.823,
+     0.015
+    ],
+    [
+     23,
+     "Chemprop",
+     0.821,
+     0.112
+    ],
+    [
+     24,
+     "Basic ML",
+     0.811,
+     0.013
+    ],
+    [
+     25,
+     "CNN (DeepPurpose)",
+     0.781,
+     0.03
+    ],
+    [
+     26,
+     "Euclia ML model",
+     0.725,
+     0.019
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "cyp2c9_veith": {
+   "slug": "10cyp2c9i",
+   "metric": "pr-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.859,
+     0.001
+    ],
+    [
+     2,
+     "ContextPred",
+     0.839,
+     0.003
+    ],
+    [
+     3,
+     "AttrMasking",
+     0.829,
+     0.003
+    ],
+    [
+     4,
+     "MiniMol",
+     0.823,
+     0.006
+    ],
+    [
+     5,
+     "ADMETrix",
+     0.789,
+     0.004
+    ],
+    [
+     6,
+     "ZairaChem",
+     0.786,
+     0.004
+    ],
+    [
+     7,
+     "MapLight",
+     0.783,
+     0.002
+    ],
+    [
+     8,
+     "Chemprop-RDKit",
+     0.777,
+     0.003
+    ],
+    [
+     9,
+     "ColorRefinement + Weighted Ensemble LGBM",
+     0.767,
+     0.003
+    ],
+    [
+     10,
+     "DeepMol (AutoML)",
+     0.758,
+     0.002
+    ],
+    [
+     11,
+     "Chemprop",
+     0.754,
+     0.002
+    ],
+    [
+     12,
+     "CFA",
+     0.751,
+     0.006
+    ],
+    [
+     13,
+     "AttentiveFP",
+     0.749,
+     0.004
+    ],
+    [
+     14,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.742,
+     0.006
+    ],
+    [
+     15,
+     "NeuralFP",
+     0.739,
+     0.01
+    ],
+    [
+     16,
+     "GCN",
+     0.735,
+     0.004
+    ],
+    [
+     17,
+     "Morgan + MLP (DeepPurpose)",
+     0.715,
+     0.004
+    ],
+    [
+     18,
+     "CNN (DeepPurpose)",
+     0.713,
+     0.006
+    ],
+    [
+     19,
+     "Basic ML",
+     0.556,
+     0.0
+    ],
+    [
+     20,
+     "Euclia ML model",
+     0.536,
+     0.003
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "cyp2d6_veith": {
+   "slug": "11cyp2d6i",
+   "metric": "pr-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.79,
+     0.001
+    ],
+    [
+     2,
+     "ContextPred",
+     0.739,
+     0.005
+    ],
+    [
+     3,
+     "MapLight",
+     0.723,
+     0.003
+    ],
+    [
+     4,
+     "AttrMasking",
+     0.721,
+     0.009
+    ],
+    [
+     5,
+     "MiniMol",
+     0.719,
+     0.004
+    ],
+    [
+     6,
+     "ADMETrix",
+     0.718,
+     0.006
+    ],
+    [
+     7,
+     "DeepMol (AutoML)",
+     0.685,
+     0.0
+    ],
+    [
+     8,
+     "Chemprop-RDKit",
+     0.673,
+     0.007
+    ],
+    [
+     9,
+     "CFA",
+     0.664,
+     0.012
+    ],
+    [
+     10,
+     "Chemprop",
+     0.649,
+     0.016
+    ],
+    [
+     11,
+     "AttentiveFP",
+     0.646,
+     0.014
+    ],
+    [
+     12,
+     "ZairaChem",
+     0.644,
+     0.085
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.627,
+     0.009
+    ],
+    [
+     14,
+     "GCN",
+     0.616,
+     0.02
+    ],
+    [
+     15,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.616,
+     0.007
+    ],
+    [
+     16,
+     "Morgan + MLP (DeepPurpose)",
+     0.587,
+     0.011
+    ],
+    [
+     17,
+     "CNN (DeepPurpose)",
+     0.544,
+     0.053
+    ],
+    [
+     18,
+     "Basic ML",
+     0.358,
+     0.0
+    ],
+    [
+     19,
+     "Euclia ML model",
+     0.348,
+     0.004
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "cyp3a4_veith": {
+   "slug": "12cyp3a4i",
+   "metric": "pr-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.916,
+     0.0
+    ],
+    [
+     2,
+     "ContextPred",
+     0.904,
+     0.002
+    ],
+    [
+     3,
+     "AttrMasking",
+     0.902,
+     0.002
+    ],
+    [
+     4,
+     "ADMETrix",
+     0.884,
+     0.001
+    ],
+    [
+     5,
+     "MapLight",
+     0.881,
+     0.001
+    ],
+    [
+     6,
+     "MiniMol",
+     0.877,
+     0.001
+    ],
+    [
+     7,
+     "Chemprop-RDKit",
+     0.876,
+     0.003
+    ],
+    [
+     8,
+     "ZairaChem",
+     0.875,
+     0.002
+    ],
+    [
+     9,
+     "DeepMol (AutoML)",
+     0.867,
+     0.002
+    ],
+    [
+     10,
+     "Chemprop",
+     0.862,
+     0.003
+    ],
+    [
+     11,
+     "CFA",
+     0.855,
+     0.004
+    ],
+    [
+     12,
+     "AttentiveFP",
+     0.851,
+     0.006
+    ],
+    [
+     13,
+     "NeuralFP",
+     0.849,
+     0.004
+    ],
+    [
+     14,
+     "GCN",
+     0.84,
+     0.01
+    ],
+    [
+     15,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.829,
+     0.007
+    ],
+    [
+     16,
+     "Morgan + MLP (DeepPurpose)",
+     0.827,
+     0.009
+    ],
+    [
+     17,
+     "CNN (DeepPurpose)",
+     0.821,
+     0.003
+    ],
+    [
+     18,
+     "Euclia ML model",
+     0.696,
+     0.004
+    ],
+    [
+     19,
+     "Basic ML",
+     0.654,
+     0.0
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "ld50_zhu": {
+   "slug": "19ld50",
+   "metric": "mae",
+   "higher_is_better": false,
+   "rows": [
+    [
+     1,
+     "BaseBoosting KyQVZ6b2",
+     0.552,
+     0.009
+    ],
+    [
+     2,
+     "ADMETrix",
+     0.573,
+     0.01
+    ],
+    [
+     3,
+     "MiniMol",
+     0.585,
+     0.008
+    ],
+    [
+     4,
+     "MACCS keys + autoML",
+     0.588,
+     0.005
+    ],
+    [
+     5,
+     "Chemprop",
+     0.606,
+     0.024
+    ],
+    [
+     6,
+     "DeepMol (AutoML)",
+     0.614,
+     0.004
+    ],
+    [
+     7,
+     "MapLight",
+     0.621,
+     0.003
+    ],
+    [
+     8,
+     "QuGIN",
+     0.622,
+     0.015
+    ],
+    [
+     9,
+     "Chemprop-RDKit",
+     0.625,
+     0.022
+    ],
+    [
+     10,
+     "CFA",
+     0.63,
+     0.012
+    ],
+    [
+     11,
+     "CMPNN",
+     0.631,
+     0.021
+    ],
+    [
+     12,
+     "MapLight + GNN",
+     0.633,
+     0.003
+    ],
+    [
+     13,
+     "Basic ML",
+     0.636,
+     0.001
+    ],
+    [
+     14,
+     "Euclia ML model",
+     0.646,
+     0.011
+    ],
+    [
+     15,
+     "GCN",
+     0.649,
+     0.026
+    ],
+    [
+     16,
+     "Morgan + MLP (DeepPurpose)",
+     0.649,
+     0.019
+    ],
+    [
+     17,
+     "NeuralFP",
+     0.667,
+     0.02
+    ],
+    [
+     18,
+     "ContextPred",
+     0.669,
+     0.03
+    ],
+    [
+     19,
+     "CNN (DeepPurpose)",
+     0.675,
+     0.011
+    ],
+    [
+     20,
+     "AttentiveFP",
+     0.678,
+     0.012
+    ],
+    [
+     21,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.678,
+     0.003
+    ],
+    [
+     22,
+     "AttrMasking",
+     0.685,
+     0.025
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "herg": {
+   "slug": "20herg",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MapLight + GNN",
+     0.88,
+     0.002
+    ],
+    [
+     2,
+     "CFA",
+     0.875,
+     0.014
+    ],
+    [
+     3,
+     "SimGCN",
+     0.874,
+     0.014
+    ],
+    [
+     4,
+     "MapLight",
+     0.871,
+     0.004
+    ],
+    [
+     5,
+     "ZairaChem",
+     0.856,
+     0.009
+    ],
+    [
+     6,
+     "MiniMol",
+     0.846,
+     0.016
+    ],
+    [
+     7,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.841,
+     0.02
+    ],
+    [
+     8,
+     "Chemprop-RDKit",
+     0.84,
+     0.007
+    ],
+    [
+     9,
+     "ADMETrix",
+     0.836,
+     0.025
+    ],
+    [
+     10,
+     "AttentiveFP",
+     0.825,
+     0.007
+    ],
+    [
+     11,
+     "AttrMasking",
+     0.778,
+     0.046
+    ],
+    [
+     12,
+     "DeepMol (AutoML)",
+     0.763,
+     0.015
+    ],
+    [
+     13,
+     "ContextPred",
+     0.756,
+     0.023
+    ],
+    [
+     14,
+     "CNN (DeepPurpose)",
+     0.754,
+     0.037
+    ],
+    [
+     15,
+     "Euclia ML model",
+     0.749,
+     0.032
+    ],
+    [
+     16,
+     "GCN",
+     0.738,
+     0.038
+    ],
+    [
+     17,
+     "Morgan + MLP (DeepPurpose)",
+     0.736,
+     0.023
+    ],
+    [
+     18,
+     "NeuralFP",
+     0.722,
+     0.034
+    ],
+    [
+     19,
+     "Chemprop",
+     0.721,
+     0.045
+    ],
+    [
+     20,
+     "Basic ML",
+     0.715,
+     0.011
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "ames": {
+   "slug": "21ames",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "ZairaChem",
+     0.871,
+     0.002
+    ],
+    [
+     2,
+     "ADMETrix",
+     0.87,
+     0.006
+    ],
+    [
+     3,
+     "MapLight + GNN",
+     0.869,
+     0.002
+    ],
+    [
+     4,
+     "MapLight",
+     0.868,
+     0.002
+    ],
+    [
+     5,
+     "CFA",
+     0.852,
+     0.005
+    ],
+    [
+     6,
+     "Chemprop-RDKit",
+     0.85,
+     0.004
+    ],
+    [
+     7,
+     "MiniMol",
+     0.849,
+     0.004
+    ],
+    [
+     8,
+     "DeepMol (AutoML)",
+     0.847,
+     0.007
+    ],
+    [
+     9,
+     "CMPNN",
+     0.843,
+     0.009
+    ],
+    [
+     10,
+     "Chemprop",
+     0.842,
+     0.014
+    ],
+    [
+     11,
+     "AttrMasking",
+     0.842,
+     0.008
+    ],
+    [
+     12,
+     "ContextPred",
+     0.837,
+     0.009
+    ],
+    [
+     13,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.823,
+     0.011
+    ],
+    [
+     14,
+     "NeuralFP",
+     0.823,
+     0.006
+    ],
+    [
+     15,
+     "GCN",
+     0.818,
+     0.01
+    ],
+    [
+     16,
+     "AttentiveFP",
+     0.814,
+     0.008
+    ],
+    [
+     17,
+     "Morgan + MLP (DeepPurpose)",
+     0.794,
+     0.008
+    ],
+    [
+     18,
+     "CNN (DeepPurpose)",
+     0.776,
+     0.015
+    ],
+    [
+     19,
+     "Euclia ML model",
+     0.755,
+     0.003
+    ],
+    [
+     20,
+     "Basic ML",
+     0.716,
+     0.0
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  },
+  "dili": {
+   "slug": "22dili",
+   "metric": "roc-auc",
+   "higher_is_better": true,
+   "rows": [
+    [
+     1,
+     "MiniMol",
+     0.956,
+     0.006
+    ],
+    [
+     2,
+     "ZairaChem",
+     0.925,
+     0.005
+    ],
+    [
+     3,
+     "AttrMasking",
+     0.919,
+     0.008
+    ],
+    [
+     4,
+     "CFA",
+     0.919,
+     0.014
+    ],
+    [
+     5,
+     "MapLight + GNN",
+     0.917,
+     0.005
+    ],
+    [
+     6,
+     "SimGCN",
+     0.909,
+     0.011
+    ],
+    [
+     7,
+     "ADMETrix",
+     0.906,
+     0.016
+    ],
+    [
+     8,
+     "Chemprop",
+     0.899,
+     0.008
+    ],
+    [
+     9,
+     "Chemprop-RDKit",
+     0.887,
+     0.011
+    ],
+    [
+     10,
+     "MapLight",
+     0.887,
+     0.006
+    ],
+    [
+     11,
+     "AttentiveFP",
+     0.886,
+     0.015
+    ],
+    [
+     12,
+     "DeepMol (AutoML)",
+     0.885,
+     0.014
+    ],
+    [
+     13,
+     "RDKit2D + MLP (DeepPurpose)",
+     0.875,
+     0.019
+    ],
+    [
+     14,
+     "Euclia ML model",
+     0.873,
+     0.024
+    ],
+    [
+     15,
+     "ContextPred",
+     0.861,
+     0.018
+    ],
+    [
+     16,
+     "GCN",
+     0.859,
+     0.033
+    ],
+    [
+     17,
+     "NeuralFP",
+     0.851,
+     0.026
+    ],
+    [
+     18,
+     "Morgan + MLP (DeepPurpose)",
+     0.832,
+     0.021
+    ],
+    [
+     19,
+     "CNN (DeepPurpose)",
+     0.792,
+     0.016
+    ],
+    [
+     20,
+     "Basic ML",
+     0.7,
+     0.0
+    ]
+   ],
+   "_read_utc": "2026-11-08T16:4xZ"
+  }
+ },
+ "_metric_source": "The metric used for scoring is tdc.metadata.admet_metrics, not the page footer. Two pages print a direction that contradicts their own metric: 11cyp2d6i and 12cyp3a4i say 'The lower the better' for AUPRC, and 19ld50 says 'The higher the better' for MAE. Both footers are page errors; the tables are sorted the conventional way."
+}

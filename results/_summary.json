@@ -1,0 +1,192 @@
+{
+ "generated_from_leaderboards": "leaderboards_2026-11-08.json",
+ "rows": [
+  {
+   "task": "caco2_wang",
+   "metric": "mae",
+   "mean": 0.291,
+   "std": 0.005,
+   "would_be_rank": 8,
+   "of": 25,
+   "listed_better_than_us": 7,
+   "selected_members": [
+    "dma-lgbm-shallow",
+    "dma-lgbm-base"
+   ],
+   "wall_seconds": 1740.6
+  },
+  {
+   "task": "clearance_hepatocyte_az",
+   "metric": "spearman",
+   "mean": 0.455,
+   "std": 0.013,
+   "would_be_rank": 4,
+   "of": 19,
+   "listed_better_than_us": 3,
+   "selected_members": [
+    "dma-et-base-log",
+    "wide-lgbm-base-log"
+   ],
+   "wall_seconds": 899.1
+  },
+  {
+   "task": "clearance_microsome_az",
+   "metric": "spearman",
+   "mean": 0.583,
+   "std": 0.009,
+   "would_be_rank": 10,
+   "of": 21,
+   "listed_better_than_us": 9,
+   "selected_members": [
+    "dma-lgbm-shallow-log",
+    "wide-lgbm-base-log",
+    "dma-lgbm-deep-log"
+   ],
+   "wall_seconds": 1154.6
+  },
+  {
+   "task": "cyp2c9_substrate_carbonmangels",
+   "metric": "pr-auc",
+   "mean": 0.38,
+   "std": 0.015,
+   "would_be_rank": 13,
+   "of": 21,
+   "listed_better_than_us": 12,
+   "selected_members": [
+    "dm-lgbm-base",
+    "dma-lgbm-shallow"
+   ],
+   "wall_seconds": 289.9
+  },
+  {
+   "task": "cyp2d6_substrate_carbonmangels",
+   "metric": "pr-auc",
+   "mean": 0.686,
+   "std": 0.033,
+   "would_be_rank": 8,
+   "of": 19,
+   "listed_better_than_us": 7,
+   "selected_members": [
+    "dma-lgbm-shallow"
+   ],
+   "wall_seconds": 236.6
+  },
+  {
+   "task": "cyp3a4_substrate_carbonmangels",
+   "metric": "roc-auc",
+   "mean": 0.644,
+   "std": 0.021,
+   "would_be_rank": 7,
+   "of": 20,
+   "listed_better_than_us": 6,
+   "selected_members": [
+    "dma-lgbm-shallow"
+   ],
+   "wall_seconds": 306.4
+  },
+  {
+   "task": "dili",
+   "metric": "roc-auc",
+   "mean": 0.881,
+   "std": 0.021,
+   "would_be_rank": 13,
+   "of": 21,
+   "listed_better_than_us": 12,
+   "selected_members": [
+    "dma-lgbm-shallow"
+   ],
+   "wall_seconds": 160.6
+  },
+  {
+   "task": "half_life_obach",
+   "metric": "spearman",
+   "mean": 0.508,
+   "std": 0.025,
+   "would_be_rank": 6,
+   "of": 21,
+   "listed_better_than_us": 5,
+   "selected_members": [
+    "dma-et-base-log",
+    "dma-lgbm-base-log",
+    "dma-et-base",
+    "dma-lgbm-base"
+   ],
+   "wall_seconds": 1712.4
+  },
+  {
+   "task": "herg",
+   "metric": "roc-auc",
+   "mean": 0.836,
+   "std": 0.007,
+   "would_be_rank": 9,
+   "of": 21,
+   "listed_better_than_us": 8,
+   "selected_members": [
+    "dma-lgbm-shallow",
+    "dma-lgbm-base",
+    "dm-lgbm-base"
+   ],
+   "wall_seconds": 352.3
+  },
+  {
+   "task": "hia_hou",
+   "metric": "roc-auc",
+   "mean": 0.987,
+   "std": 0.002,
+   "would_be_rank": 5,
+   "of": 21,
+   "listed_better_than_us": 4,
+   "selected_members": [
+    "wide-lgbm-base",
+    "dma-lgbm-base",
+    "dma-et-base"
+   ],
+   "wall_seconds": 378.5
+  },
+  {
+   "task": "pgp_broccatelli",
+   "metric": "roc-auc",
+   "mean": 0.91,
+   "std": 0.015,
+   "would_be_rank": 8,
+   "of": 17,
+   "listed_better_than_us": 7,
+   "selected_members": [
+    "dma-lgbm-deep",
+    "dma-lgbm-shallow",
+    "dma-lgbm-base",
+    "dma-et-base"
+   ],
+   "wall_seconds": 679.4
+  },
+  {
+   "task": "ppbr_az",
+   "metric": "mae",
+   "mean": 7.766,
+   "std": 0.162,
+   "would_be_rank": 5,
+   "of": 21,
+   "listed_better_than_us": 4,
+   "selected_members": [
+    "dm-lgbm-base",
+    "dma-lgbm-shallow",
+    "dma-lgbm-base"
+   ],
+   "wall_seconds": 1006.8
+  },
+  {
+   "task": "vdss_lombardo",
+   "metric": "spearman",
+   "mean": 0.702,
+   "std": 0.01,
+   "would_be_rank": 3,
+   "of": 20,
+   "listed_better_than_us": 2,
+   "selected_members": [
+    "dm-lgbm-base-log",
+    "dma-lgbm-shallow-log"
+   ],
+   "wall_seconds": 1072.0
+  }
+ ]
+}

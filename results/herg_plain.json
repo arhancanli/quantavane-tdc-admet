@@ -1,0 +1,74 @@
+{
+ "task": "herg",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "mean": 0.844,
+ "std": 0.008,
+ "per_seed": [
+  0.85,
+  0.852,
+  0.836,
+  0.851,
+  0.833
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.9078837194717698,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.9078837194717698
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.9078837194717698,
+    "inner_std": 0.009545403829687747,
+    "inner_folds": [
+     0.9212962962962963,
+     0.8998548621190131,
+     0.9025000000000001
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 49.20433807373047
+  }
+ },
+ "dataset": {
+  "train_val": 523,
+  "test": 132,
+  "unique_smiles": 648,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "wall_seconds": 112.2,
+ "finished_utc": "2026-11-08T16:58:02Z"
+}

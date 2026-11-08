@@ -1,0 +1,165 @@
+{
+ "task": "half_life_obach",
+ "metric": "spearman",
+ "higher_is_better": true,
+ "mean": 0.508,
+ "std": 0.025,
+ "per_seed": [
+  0.486,
+  0.49,
+  0.554,
+  0.495,
+  0.517
+ ],
+ "selected_members": [
+  "dma-et-base-log",
+  "dma-lgbm-base-log",
+  "dma-et-base",
+  "dma-lgbm-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "et",
+   "variant": "base",
+   "log_target": true,
+   "id": "dma-et-base-log"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": true,
+   "id": "dma-lgbm-base-log"
+  },
+  {
+   "features": "dma",
+   "learner": "et",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-et-base"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dm-lgbm-base": 0.2204533098042704,
+   "dma-lgbm-base": 0.3490688318836392,
+   "wide-lgbm-base": 0.2870285347597191,
+   "dma-lgbm-deep": 0.30201462851758354,
+   "dma-lgbm-shallow": 0.21710720818841997,
+   "dma-et-base": 0.3784949662616383,
+   "dma-lgbm-base-log": 0.4308668473755846,
+   "dma-et-base-log": 0.4496262753202564
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-et-base-log"
+    ],
+    "inner_mean": 0.4496262753202564,
+    "inner_std": 0.024166685960169788,
+    "inner_folds": [
+     0.4824124701276656,
+     0.4415903387971477,
+     0.4248760170359559
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base-log",
+     "dma-lgbm-base-log"
+    ],
+    "inner_mean": 0.45632920400008165,
+    "inner_std": 0.022160101831430315,
+    "inner_folds": [
+     0.4871490325005115,
+     0.4458395334605083,
+     0.435999046039225
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base-log",
+     "dma-lgbm-base-log",
+     "dma-et-base"
+    ],
+    "inner_mean": 0.4666711382662941,
+    "inner_std": 0.034649517220265796,
+    "inner_folds": [
+     0.515398283239765,
+     0.43782063225575824,
+     0.44679449930335896
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base-log",
+     "dma-lgbm-base-log",
+     "dma-et-base",
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.47779618989443096,
+    "inner_std": 0.028953733668139164,
+    "inner_folds": [
+     0.5181078819701013,
+     0.4514191179737365,
+     0.46386156973945514
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base-log",
+     "dma-lgbm-base-log",
+     "dma-et-base",
+     "dma-lgbm-base",
+     "dma-lgbm-deep"
+    ],
+    "inner_mean": 0.4731426208663199,
+    "inner_std": 0.02543641346139686,
+    "inner_folds": [
+     0.49825367364961787,
+     0.4382803025548427,
+     0.4828938863944992
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dm-lgbm-base": 142.8458068370819,
+   "dma-lgbm-base": 129.05040836334229,
+   "wide-lgbm-base": 149.53023719787598,
+   "dma-lgbm-deep": 832.9079542160034,
+   "dma-lgbm-shallow": 93.03589701652527,
+   "dma-et-base": 0.7270662784576416,
+   "dma-lgbm-base-log": 110.85555601119995,
+   "dma-et-base-log": 0.600783109664917
+  }
+ },
+ "dataset": {
+  "train_val": 532,
+  "test": 135,
+  "unique_smiles": 665,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "wall_seconds": 1712.4,
+ "finished_utc": "2026-11-08T13:45:45Z"
+}

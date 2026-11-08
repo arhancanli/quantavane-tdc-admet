@@ -1,0 +1,11 @@
+.venv/
+.venv-tabpfn/
+__pycache__/
+*.pyc
+data/
+logs/
+models/
+# Plugin state files that some tools drop into the working directory.
+.claude-flow/
+.swarm/
+ruvector.db

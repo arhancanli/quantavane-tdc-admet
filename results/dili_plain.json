@@ -1,0 +1,74 @@
+{
+ "task": "dili",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "mean": 0.879,
+ "std": 0.009,
+ "per_seed": [
+  0.89,
+  0.877,
+  0.883,
+  0.883,
+  0.864
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.8433081847957223,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.8433081847957223
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.8433081847957223,
+    "inner_std": 0.11982828684273526,
+    "inner_folds": [
+     0.6740740740740742,
+     0.935546875,
+     0.920303605313093
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 33.38205122947693
+  }
+ },
+ "dataset": {
+  "train_val": 379,
+  "test": 96,
+  "unique_smiles": 475,
+  "unparsable_smiles": 0,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "wall_seconds": 106.3,
+ "finished_utc": "2026-11-08T16:59:51Z"
+}
