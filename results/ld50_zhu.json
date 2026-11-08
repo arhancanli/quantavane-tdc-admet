@@ -1,0 +1,211 @@
+{
+ "task": "ld50_zhu",
+ "metric": "mae",
+ "higher_is_better": false,
+ "mean": 0.586,
+ "std": 0.004,
+ "per_seed": [
+  0.584,
+  0.589,
+  0.584,
+  0.592,
+  0.58
+ ],
+ "selected_members": [
+  "dma-et-base",
+  "dma-lgbm-deep",
+  "dmap-lgbm-base"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [
+   0.47550750178553935,
+   0.48428470157811015,
+   0.49267706982690956
+  ],
+  "mean_half_scores": [
+   0.4721818014956729,
+   0.4747700753515709,
+   0.49040951107346803
+  ],
+  "skipped": []
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "et",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-et-base"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "deep",
+   "log_target": false,
+   "id": "dma-lgbm-deep"
+  },
+  {
+   "features": "dmap",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dmap-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.48969162910556524,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dm-lgbm-base": 0.518033304366338,
+   "dma-lgbm-base": 0.4996096392735884,
+   "dma-lgbm-deep": 0.4952062028213109,
+   "dma-lgbm-shallow": 0.5014072991562863,
+   "dma-et-base": 0.4943438530546785,
+   "dma-hgb-base": 0.5109644708203335,
+   "dmap-lgbm-base": 0.49579011030884995
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-et-base"
+    ],
+    "inner_mean": 0.4943438530546785,
+    "inner_std": 0.0118247834003762,
+    "inner_folds": [
+     0.4789702736430612,
+     0.5077295940460081,
+     0.4963316914749662
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base",
+     "dma-lgbm-deep"
+    ],
+    "inner_mean": 0.49143399787074893,
+    "inner_std": 0.01131465949482674,
+    "inner_folds": [
+     0.4780801635054279,
+     0.5057456128230325,
+     0.49047621728378626
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base",
+     "dma-lgbm-deep",
+     "dmap-lgbm-base"
+    ],
+    "inner_mean": 0.48969162910556524,
+    "inner_std": 0.01096940436566085,
+    "inner_folds": [
+     0.4764788563949619,
+     0.5033378113513399,
+     0.4892582195703938
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base",
+     "dma-lgbm-deep",
+     "dmap-lgbm-base",
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.4901044130428777,
+    "inner_std": 0.011639530396200198,
+    "inner_folds": [
+     0.4757691540597096,
+     0.5042787010947333,
+     0.4902653839741902
+    ]
+   },
+   {
+    "members": [
+     "dma-et-base",
+     "dma-lgbm-deep",
+     "dmap-lgbm-base",
+     "dma-lgbm-base",
+     "dma-lgbm-shallow"
+    ],
+    "inner_mean": 0.4905423141983763,
+    "inner_std": 0.011844924771080675,
+    "inner_folds": [
+     0.4763823884447563,
+     0.5053731313015163,
+     0.4898714228488564
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dm-lgbm-base": 112.8510069847107,
+   "dma-lgbm-base": 144.20922136306763,
+   "dma-lgbm-deep": 275.4400508403778,
+   "dma-lgbm-shallow": 159.89752578735352,
+   "dma-et-base": 9.665747165679932,
+   "dma-hgb-base": 413.7761929035187,
+   "dmap-lgbm-base": 212.80395007133484
+  }
+ },
+ "dataset": {
+  "train_val": 5907,
+  "test": 1478,
+  "unique_smiles": 7342,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "atompair",
+   "avalon",
+   "desc",
+   "maccs",
+   "morgan"
+  ],
+  "feature_columns": 5504,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "strong",
+ "candidate_ids": [
+  "dm-lgbm-base",
+  "dma-lgbm-base",
+  "dma-lgbm-deep",
+  "dma-lgbm-shallow",
+  "dma-et-base",
+  "dma-hgb-base",
+  "dmap-lgbm-base"
+ ],
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "unset",
+  "ckpt_classifier": "unset",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 2203.0,
+ "finished_utc": "2026-11-08T17:52:36Z"
+}
