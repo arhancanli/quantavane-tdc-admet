@@ -1,0 +1,231 @@
+{
+ "task": "bbb_martins",
+ "venue": "Therapeutics Data Commons, ADMET Benchmark Group",
+ "board_page": "https://tdcommons.ai/benchmark/admet_group/07bbb/",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "result": {
+  "mean": 0.923,
+  "std": 0.004,
+  "per_seed": [
+   0.919,
+   0.922,
+   0.93,
+   0.925,
+   0.92
+  ]
+ },
+ "would_be_rank": 2,
+ "of_listed_after_insert": 27,
+ "board_top_3": [
+  {
+   "rank": 1,
+   "model": "MiniMol",
+   "value": 0.924,
+   "std": 0.003
+  },
+  {
+   "rank": 2,
+   "model": "CFA",
+   "value": 0.92,
+   "std": 0.006
+  },
+  {
+   "rank": 3,
+   "model": "MapLight",
+   "value": 0.916,
+   "std": 0.001
+  }
+ ],
+ "board_read_utc": "2026-11-08 (9 tasks early, the other 13 at about 16:45 UTC)",
+ "seeds": {
+  "official": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "tuning": [
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115
+  ],
+  "note": "The tuning seeds draw extra scaffold train/valid splits of train_val only. The official seeds are TDC's five runs."
+ },
+ "model": {
+  "selected_members": [
+   "mlng-lgbm-base",
+   "mlng-lgbm-deep",
+   "mlng-lgbm-shallow",
+   "mlng-cat-base",
+   "mlng-et-base"
+  ],
+  "member_configs": [
+   {
+    "features": "mlng",
+    "learner": "lgbm",
+    "variant": "base",
+    "log_target": false,
+    "id": "mlng-lgbm-base"
+   },
+   {
+    "features": "mlng",
+    "learner": "lgbm",
+    "variant": "deep",
+    "log_target": false,
+    "id": "mlng-lgbm-deep"
+   },
+   {
+    "features": "mlng",
+    "learner": "lgbm",
+    "variant": "shallow",
+    "log_target": false,
+    "id": "mlng-lgbm-shallow"
+   },
+   {
+    "features": "mlng",
+    "learner": "cat",
+    "variant": "base",
+    "log_target": false,
+    "id": "mlng-cat-base"
+   },
+   {
+    "features": "mlng",
+    "learner": "et",
+    "variant": "base",
+    "log_target": false,
+    "id": "mlng-et-base"
+   }
+  ],
+  "blend_mode": "mean",
+  "inner_cv_of_selected": 0.9458612408117927,
+  "candidates_considered": [
+   "mlng-lgbm-base",
+   "mlng-lgbm-shallow",
+   "mlng-lgbm-deep",
+   "mlng-cat-base",
+   "mlng-et-base"
+  ]
+ },
+ "round_choice": {
+  "compared_on_seeds": [
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115
+  ],
+  "rounds": [
+   {
+    "file": "bbb_martins.json",
+    "inner_on_shared": 0.9439284743614423,
+    "inner_on_own_folds": 0.9520655727032118,
+    "own_seeds": [
+     101,
+     102,
+     103
+    ],
+    "test_mean": 0.914,
+    "source": "bbb_martins.json re-tuned by bbb_martins_retune",
+    "reported": false
+   },
+   {
+    "file": "bbb_martins_r3maplight.json",
+    "inner_on_shared": 0.9458612408117927,
+    "inner_on_own_folds": 0.9458612408117927,
+    "own_seeds": [
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108,
+     109,
+     110,
+     111,
+     112,
+     113,
+     114,
+     115
+    ],
+    "test_mean": 0.923,
+    "source": "bbb_martins_r3maplight.json",
+    "reported": true
+   }
+  ]
+ },
+ "dataset": {
+  "train_val": 1624,
+  "test": 406,
+  "unique_smiles": 1975,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "avalon",
+   "desc",
+   "erg",
+   "morgan"
+  ],
+  "feature_columns": 3604,
+  "train_test_smiles_overlap": 0
+ },
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "lane": "admet-tdc-v2",
+ "code": {
+  "directory": "codev2",
+  "sha256": {
+   "features.py": "dcf94fa93bae3077c48f82a2d848f01260cf305dd7293d960c2b04bddf06b6f5",
+   "models.py": "222bb1afadc5ee36cb00cbcfa1de89f6c78cbfb1e17624e8468534c15a938c4f",
+   "protocol.py": "04194c642bde8f119bf25e395b60cf3f0f440699b42b3af920af3965d0311bd2",
+   "run_task.py": "95b6d045ca5ad60dbb0a3cbbddc332a11b9f768649b58100f5a74b280cae5ab9"
+  },
+  "public_repository_staging": "~/quantavane-tdc-admet (not pushed)"
+ },
+ "result_file": "bbb_martins_r3maplight.json",
+ "predictions_file": "bbb_martins_r3maplight_test_predictions.npy",
+ "reviewer_checks": {
+  "passed": true,
+  "problems": []
+ },
+ "attribution_required": [],
+ "submitted": false,
+ "submission_note": "Nothing has been submitted. The TDC form is the owner's step."
+}

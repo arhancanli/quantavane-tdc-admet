@@ -1,0 +1,316 @@
+{
+ "task": "hia_hou",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "mean": 0.986,
+ "std": 0.002,
+ "per_seed": [
+  0.987,
+  0.989,
+  0.986,
+  0.985,
+  0.984
+ ],
+ "selected_members": [
+  "mlng-lgbm-base",
+  "mlng-lgbm-shallow",
+  "mlng-lgbm-deep",
+  "mlng-cat-base",
+  "mlng-et-base"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [
+   0.9699248120300752,
+   0.9416666666666667,
+   0.984375,
+   1.0,
+   0.9782608695652174,
+   1.0,
+   0.9444444444444445,
+   1.0,
+   0.896551724137931,
+   1.0,
+   0.9523809523809523,
+   0.9753086419753086,
+   1.0,
+   0.9785714285714286
+  ],
+  "mean_half_scores": [
+   0.9699248120300752,
+   0.975,
+   0.984375,
+   1.0,
+   0.9782608695652174,
+   1.0,
+   0.9444444444444445,
+   1.0,
+   0.9310344827586208,
+   1.0,
+   0.9523809523809523,
+   0.9753086419753086,
+   1.0,
+   0.9857142857142858
+  ],
+  "skipped": [
+   "fold 111: a half holds one class"
+  ]
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "mlng",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "mlng-lgbm-base"
+  },
+  {
+   "features": "mlng",
+   "learner": "lgbm",
+   "variant": "shallow",
+   "log_target": false,
+   "id": "mlng-lgbm-shallow"
+  },
+  {
+   "features": "mlng",
+   "learner": "lgbm",
+   "variant": "deep",
+   "log_target": false,
+   "id": "mlng-lgbm-deep"
+  },
+  {
+   "features": "mlng",
+   "learner": "cat",
+   "variant": "base",
+   "log_target": false,
+   "id": "mlng-cat-base"
+  },
+  {
+   "features": "mlng",
+   "learner": "et",
+   "variant": "base",
+   "log_target": false,
+   "id": "mlng-et-base"
+  }
+ ],
+ "selected_inner_mean": 0.9842028645014521,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115
+  ],
+  "config_inner_mean": {
+   "mlng-lgbm-base": 0.9822559632834383,
+   "mlng-lgbm-shallow": 0.9817345381698889,
+   "mlng-lgbm-deep": 0.979748997335713,
+   "mlng-cat-base": 0.9795172139182511,
+   "mlng-et-base": 0.977814867960884
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "mlng-lgbm-base"
+    ],
+    "inner_mean": 0.9822559632834383,
+    "inner_std": 0.01098252332995208,
+    "inner_folds": [
+     0.9709864603481625,
+     0.9841269841269841,
+     0.9878787878787879,
+     0.971153846153846,
+     0.9903846153846154,
+     1.0,
+     0.9750000000000001,
+     0.9915966386554622,
+     0.963718820861678,
+     0.9629629629629629,
+     0.993939393939394,
+     0.981859410430839,
+     0.9839743589743589,
+     0.9943977591036415,
+     0.981859410430839
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-base",
+     "mlng-lgbm-shallow"
+    ],
+    "inner_mean": 0.9821114958682752,
+    "inner_std": 0.009435340994103683,
+    "inner_folds": [
+     0.9651837524177951,
+     0.9829931972789117,
+     0.9878787878787879,
+     0.9807692307692307,
+     0.985576923076923,
+     0.9983974358974359,
+     0.9833333333333334,
+     0.9915966386554622,
+     0.973922902494331,
+     0.962962962962963,
+     0.990909090909091,
+     0.979591836734694,
+     0.9807692307692307,
+     0.9915966386554622,
+     0.9761904761904762
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-base",
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-deep"
+    ],
+    "inner_mean": 0.9825554440876795,
+    "inner_std": 0.009966577842379457,
+    "inner_folds": [
+     0.9671179883945841,
+     0.9841269841269841,
+     0.9878787878787879,
+     0.9759615384615384,
+     0.9871794871794871,
+     1.0,
+     0.9822916666666667,
+     0.9915966386554621,
+     0.9705215419501134,
+     0.962962962962963,
+     0.993939393939394,
+     0.981859410430839,
+     0.9839743589743589,
+     0.9915966386554621,
+     0.9773242630385488
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-base",
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-deep",
+     "mlng-cat-base"
+    ],
+    "inner_mean": 0.9831488103515639,
+    "inner_std": 0.010587778567970418,
+    "inner_folds": [
+     0.9671179883945842,
+     0.9829931972789115,
+     0.9878787878787879,
+     0.9871794871794872,
+     0.9839743589743589,
+     1.0,
+     0.9750000000000001,
+     0.9915966386554622,
+     0.9750566893424036,
+     0.9583333333333334,
+     0.993939393939394,
+     0.9841269841269841,
+     0.9871794871794872,
+     0.9943977591036415,
+     0.9784580498866213
+    ]
+   },
+   {
+    "members": [
+     "mlng-lgbm-base",
+     "mlng-lgbm-shallow",
+     "mlng-lgbm-deep",
+     "mlng-cat-base",
+     "mlng-et-base"
+    ],
+    "inner_mean": 0.9842028645014521,
+    "inner_std": 0.010687428521968531,
+    "inner_folds": [
+     0.9690522243713734,
+     0.9841269841269841,
+     0.9878787878787879,
+     0.9839743589743589,
+     0.9903846153846154,
+     1.0,
+     0.9833333333333334,
+     0.9929971988795518,
+     0.9705215419501134,
+     0.9583333333333334,
+     0.993939393939394,
+     0.981859410430839,
+     0.9903846153846154,
+     0.9943977591036415,
+     0.981859410430839
+    ]
+   }
+  ],
+  "config_seconds": {
+   "mlng-lgbm-base": 113.03820848464966,
+   "mlng-lgbm-shallow": 92.11063599586487,
+   "mlng-lgbm-deep": 212.82312941551208,
+   "mlng-cat-base": 39.22414827346802,
+   "mlng-et-base": 2.5427234172821045
+  }
+ },
+ "dataset": {
+  "train_val": 461,
+  "test": 117,
+  "unique_smiles": 578,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "avalon",
+   "desc",
+   "erg",
+   "morgan"
+  ],
+  "feature_columns": 3604,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "maplight",
+ "candidate_ids": [
+  "mlng-lgbm-base",
+  "mlng-lgbm-shallow",
+  "mlng-lgbm-deep",
+  "mlng-cat-base",
+  "mlng-et-base"
+ ],
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "unset",
+  "ckpt_classifier": "unset",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 732.3,
+ "finished_utc": "2026-11-08T19:58:02Z"
+}

@@ -49,6 +49,15 @@ def main() -> int:
         help="put every regression candidate on a log1p target (for a second round on a "
         "Spearman task where the first round's inner CV already favoured it)",
     )
+    ap.add_argument(
+        "--tune-only",
+        action="store_true",
+        help="run the inner-CV tuning pass only: no official run, no test score. Used to "
+        "re-estimate an earlier round's candidate list on more folds so two rounds can be "
+        "compared on the same estimator.",
+    )
+    ap.add_argument("--retunes", default=None,
+                    help="the result file this tuning pass re-estimates, e.g. bbb_martins.json")
     args = ap.parse_args()
 
     failures = []
@@ -66,6 +75,8 @@ def main() -> int:
                 ),
                 tag=args.tag,
                 force_log=args.force_log,
+                tune_only=args.tune_only,
+                retunes=args.retunes,
             )
         except Exception as exc:  # keep the remaining tasks running
             protocol.log(f"FAILED {task}: {type(exc).__name__}: {exc}")

@@ -368,6 +368,8 @@ def run_task(
     only_configs: list[str] | None = None,
     tag: str | None = None,
     force_log: bool = False,
+    tune_only: bool = False,
+    retunes: str | None = None,
 ) -> dict:
     t_start = time.time()
     group = admet_group(path=data_dir)
@@ -404,6 +406,48 @@ def run_task(
     )
 
     sel = tune(group, data, cfgs, tune_seeds)
+
+    if tune_only:
+        # A tuning pass and nothing else: no official run, no test score, no new
+        # prediction vectors. Used to re-estimate an EARLIER round's candidate list on
+        # more inner folds, so two rounds can be compared on the same estimator. The
+        # earlier round's recorded test score is reused unchanged; the test labels are
+        # not touched here at all.
+        record = {
+            "task": data.name,
+            "metric": data.metric,
+            "higher_is_better": data.higher_better,
+            "tune_only": True,
+            "retunes": retunes,
+            "selected_members": sel["selected_members"],
+            "selected_inner_mean": sel["selected_inner_mean"],
+            "blend_mode": sel["blend_mode"],
+            "inner_cv": {
+                "tune_seeds": sel["tune_seeds"],
+                "config_inner_mean": sel["config_inner_mean"],
+                "blend_candidates": sel["blend_candidates"],
+                "config_seconds": sel["config_seconds"],
+            },
+            "candidate_ids": [c["id"] for c in cfgs],
+            "budget": budget or models.BUDGET,
+            "dataset": {"train_val": len(data.train_val), "test": len(data.test),
+                        "unique_smiles": len(data.unique),
+                        "unparsable_smiles": data.n_invalid,
+                        "train_test_smiles_overlap": data.smiles_overlap,
+                        "feature_blocks": sorted(data.blocks),
+                        "feature_columns": int(sum(v.shape[1] for v in data.blocks.values()))},
+            "provenance": provenance(),
+            "wall_seconds": round(time.time() - t_start, 1),
+            "finished_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        os.makedirs(out_dir, exist_ok=True)
+        stem = data.name + (f"_{tag}" if tag else "")
+        with open(os.path.join(out_dir, f"{stem}.json"), "w") as fh:
+            json.dump(record, fh, indent=1)
+        log(f"TUNE-ONLY {data.name}: inner {sel['selected_inner_mean']:.4f} over "
+            f"{len(sel['tune_seeds'])} folds, re-tuning {retunes}")
+        return record
+
     res = run_official(group, data, cfgs_by_id, sel["selected_members"],
                        blend_mode=sel["blend_mode"])
 

@@ -12,6 +12,8 @@ import glob
 import json
 import os
 
+import choose
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 LB = json.load(open(os.path.join(BASE, "leaderboards_2026-11-08.json")))
@@ -65,6 +67,8 @@ def load_rounds() -> tuple[dict, dict]:
             continue
         rec = json.load(open(path))
         rec["_file"] = name
+        if rec.get("tune_only"):
+            continue  # informs the choice, never a reported row
         if name.endswith("_plain.json"):
             plain[rec["task"]] = rec
         else:
@@ -73,9 +77,10 @@ def load_rounds() -> tuple[dict, dict]:
 
 
 def pick(rs: list[dict]) -> dict:
-    """The round with the best inner-CV score. Never the best test score."""
-    hb = rs[0]["higher_is_better"]
-    return max(rs, key=lambda r: inner_common(r) if hb else -inner_common(r))
+    """The round to report, by the shared rule in choose.py. Never the best test score."""
+    _name, best, _why = choose.pick([(r["_file"], r) for r in rs],
+                                    os.path.join(BASE, "results"))
+    return best
 
 
 def rank_of(task: str, ours: float):
@@ -176,14 +181,20 @@ def main() -> None:
         print("the cases where the round that lost on inner CV scored better on test, because")
         print("reporting those would make the published number a selected maximum.")
         print()
-        print("| Task | Round | Inner CV | Official test | Reported |")
-        print("|---|---|---|---|---|")
+        print("Inner CV is the score on the folds the rounds were compared on, which is what the")
+        print("choice was made with. Where a round was originally tuned on fewer folds, its own")
+        print("candidate list was re-tuned on the full set first, as a tuning-only pass that produces")
+        print("no test score, so both rounds are scored by the same estimator.")
+        print()
+        print("| Task | Round | Folds compared | Inner CV | Official test | Reported |")
+        print("|---|---|---|---|---|---|")
         for task in sorted(multi):
-            best = chosen[task]
-            for r in sorted(multi[task], key=lambda x: x["_file"]):
-                mark = "yes" if r["_file"] == best["_file"] else "no"
-                print(f"| {task} | `{r['_file']}` | {inner(r):.4f} | {r['mean']:.3f} ± "
-                      f"{r['std']:.3f} | {mark} |")
+            _n, _b, why = choose.pick([(r["_file"], r) for r in multi[task]],
+                                      os.path.join(BASE, "results"))
+            nf = len(why["compared_on_seeds"])
+            for d in sorted(why["rounds"], key=lambda x: x["file"]):
+                print(f"| {task} | `{d['file']}` | {nf} | {d['inner_on_shared']:.4f} | "
+                      f"{d['test_mean']:.3f} | {'yes' if d['reported'] else 'no'} |")
         print()
 
     if plain:

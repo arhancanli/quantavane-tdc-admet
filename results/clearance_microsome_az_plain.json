@@ -1,0 +1,112 @@
+{
+ "task": "clearance_microsome_az",
+ "metric": "spearman",
+ "higher_is_better": true,
+ "mean": 0.574,
+ "std": 0.017,
+ "per_seed": [
+  0.541,
+  0.59,
+  0.583,
+  0.581,
+  0.574
+ ],
+ "selected_members": [
+  "dma-lgbm-base"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [],
+  "mean_half_scores": [],
+  "skipped": [
+   "single member: nothing to stack"
+  ]
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "base",
+   "log_target": false,
+   "id": "dma-lgbm-base"
+  }
+ ],
+ "selected_inner_mean": 0.5803748153209679,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dma-lgbm-base": 0.5803748153209679
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dma-lgbm-base"
+    ],
+    "inner_mean": 0.5803748153209679,
+    "inner_std": 0.023448244230872536,
+    "inner_folds": [
+     0.5477176489568313,
+     0.5917171824964037,
+     0.6016896145096687
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dma-lgbm-base": 32.72241973876953
+  }
+ },
+ "dataset": {
+  "train_val": 881,
+  "test": 221,
+  "unique_smiles": 1102,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "avalon",
+   "desc",
+   "maccs",
+   "morgan"
+  ],
+  "feature_columns": 3456,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "lean",
+ "candidate_ids": [
+  "dma-lgbm-base"
+ ],
+ "provenance": {
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "3.1.1",
+  "tabpfn": "absent",
+  "torch": "absent"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "unset",
+  "ckpt_classifier": "unset",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 131.8,
+ "finished_utc": "2026-11-08T19:00:34Z"
+}

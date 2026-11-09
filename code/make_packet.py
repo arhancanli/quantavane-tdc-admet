@@ -21,6 +21,8 @@ import json
 import os
 import sys
 
+import choose
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 RESULTS = os.path.join(BASE, "results")
@@ -43,6 +45,28 @@ def inner(rec: dict) -> float:
     raise KeyError(rec["task"])
 
 
+COMMON_SEEDS = (101, 102, 103)
+
+
+def inner_common(rec: dict) -> float:
+    """The selected blend's inner score on the tuning folds every round shares.
+
+    Must match make_table.py: the cross-round choice is made on the common seeds,
+    because a fifteen-seed mean and a three-seed mean are different estimators. This
+    function existing in only one of the two tools is how the packet builder and the
+    results table once disagreed about which round to report.
+    """
+    cv = rec["inner_cv"]
+    seeds = list(cv["tune_seeds"])
+    for cand in cv["blend_candidates"]:
+        if cand["members"] == rec["selected_members"]:
+            keep = [f for s, f in zip(seeds, cand["inner_folds"]) if s in COMMON_SEEDS]
+            if len(keep) != len(COMMON_SEEDS):
+                raise KeyError(f"{rec['task']}: seeds {seeds} miss some of {COMMON_SEEDS}")
+            return float(sum(keep) / len(keep))
+    raise KeyError(f"cannot recover inner folds for {rec['task']}")
+
+
 def tag_of(filename: str, task: str) -> str:
     stem = filename[:-5]
     return "" if stem == task else stem[len(task) + 1:]
@@ -55,7 +79,7 @@ def rounds_for(task: str) -> list[tuple[str, dict]]:
         if name.endswith("_summary.json"):
             continue
         rec = json.load(open(path))
-        if rec.get("task") != task:
+        if rec.get("task") != task or rec.get("tune_only"):
             continue
         tag = tag_of(name, task)
         if tag == "plain":
@@ -86,7 +110,7 @@ def main() -> int:
         raise SystemExit(f"{task}: no result files")
     hb = rounds[0][1]["higher_is_better"]
     # The reported round is the one with the best inner CV, never the best test score.
-    chosen_name, chosen = max(rounds, key=lambda nr: inner(nr[1]) if hb else -inner(nr[1]))
+    chosen_name, chosen, why = choose.pick(rounds, RESULTS)
 
     ours = chosen["mean"]
     better = sum(1 for _, _, v, _ in board["rows"] if (v > ours if hb else v < ours))
@@ -142,8 +166,7 @@ def main() -> int:
                   "blend_mode": chosen.get("blend_mode", "mean"),
                   "inner_cv_of_selected": inner(chosen),
                   "candidates_considered": chosen["candidate_ids"]},
-        "rounds_considered": [{"file": nm, "inner_cv": inner(r), "test_mean": r["mean"],
-                               "reported": nm == chosen_name} for nm, r in rounds],
+        "round_choice": why,
         "dataset": d,
         "provenance": chosen.get("provenance", "not recorded in this round"),
         "lane": lane,
@@ -201,6 +224,27 @@ def main() -> int:
         ]
     if uses_tabpfn:
         lines += ["**Attribution.** Built with PriorLabs-TabPFN.", ""]
+    if len(rounds) > 1:
+        shared = why["compared_on_seeds"]
+        mine = next(d for d in why["rounds"] if d["reported"])
+        others = [d for d in why["rounds"] if not d["reported"]]
+        runner = max(others, key=lambda d: d["inner_on_shared"]) if hb else \
+            min(others, key=lambda d: d["inner_on_shared"])
+        margin = abs(mine["inner_on_shared"] - runner["inner_on_shared"])
+        lines += [
+            "**How the reported round was chosen, and how thin the margin is.** This task was run in",
+            f"{len(rounds)} rounds. The reported one was chosen by inner cross-validation on training",
+            f"rows over {len(shared)} shared scaffold folds (tuning seeds {shared[0]}-{shared[-1]}),",
+            f"scoring {mine['inner_on_shared']:.4f} against {runner['inner_on_shared']:.4f} for",
+            f"`{runner['file']}` -- a margin of {margin:.4f}. Test scores played no part in the",
+            "choice. Where a round had originally been tuned on fewer folds, its own candidate list",
+            "was re-tuned on the full set first, as a tuning-only pass that produces no test score, so",
+            "the two rounds are compared on the same estimator rather than on the three folds they",
+            f"happened to share. The other round's official test score was {runner['test_mean']:.3f}.",
+            f"A margin of {margin:.4f} is small, and this result should be read as level with the",
+            "entries around it rather than clearly better than them.",
+            "",
+        ]
     lines += [
         f"**Code.** `{packet['code']['directory']}/` in the staging repository "
         "`~/quantavane-tdc-admet`, with these file hashes:",

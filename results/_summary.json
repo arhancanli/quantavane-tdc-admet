@@ -4,18 +4,19 @@
   {
    "task": "bbb_martins",
    "metric": "roc-auc",
-   "mean": 0.914,
-   "std": 0.006,
-   "would_be_rank": 5,
+   "mean": 0.923,
+   "std": 0.004,
+   "would_be_rank": 2,
    "of": 27,
-   "listed_better_than_us": 4,
+   "listed_better_than_us": 1,
    "selected_members": [
-    "wide-lgbm-base",
-    "dma-lgbm-base",
-    "dma-lgbm-deep",
-    "dm-lgbm-base"
+    "mlng-lgbm-base",
+    "mlng-lgbm-deep",
+    "mlng-lgbm-shallow",
+    "mlng-cat-base",
+    "mlng-et-base"
    ],
-   "wall_seconds": 1040.0
+   "wall_seconds": 1254.3
   },
   {
    "task": "bioavailability_ma",
@@ -34,30 +35,31 @@
   {
    "task": "caco2_wang",
    "metric": "mae",
-   "mean": 0.291,
-   "std": 0.005,
-   "would_be_rank": 8,
+   "mean": 0.3,
+   "std": 0.013,
+   "would_be_rank": 9,
    "of": 25,
-   "listed_better_than_us": 7,
+   "listed_better_than_us": 8,
    "selected_members": [
-    "dma-lgbm-shallow",
-    "dma-lgbm-base"
+    "mlng-lgbm-deep",
+    "mlng-cat-base"
    ],
-   "wall_seconds": 1740.6
+   "wall_seconds": 2711.5
   },
   {
    "task": "clearance_hepatocyte_az",
    "metric": "spearman",
-   "mean": 0.455,
-   "std": 0.013,
+   "mean": 0.46,
+   "std": 0.011,
    "would_be_rank": 4,
    "of": 19,
    "listed_better_than_us": 3,
    "selected_members": [
-    "dma-et-base-log",
-    "wide-lgbm-base-log"
+    "mlng-cat-base-log",
+    "mlng-lgbm-base-log",
+    "mlng-et-base-log"
    ],
-   "wall_seconds": 899.1
+   "wall_seconds": 926.3
   },
   {
    "task": "clearance_microsome_az",
@@ -161,17 +163,19 @@
   {
    "task": "hia_hou",
    "metric": "roc-auc",
-   "mean": 0.987,
+   "mean": 0.986,
    "std": 0.002,
    "would_be_rank": 5,
    "of": 21,
    "listed_better_than_us": 4,
    "selected_members": [
-    "wide-lgbm-base",
-    "dma-lgbm-base",
-    "dma-et-base"
+    "mlng-lgbm-base",
+    "mlng-lgbm-shallow",
+    "mlng-lgbm-deep",
+    "mlng-cat-base",
+    "mlng-et-base"
    ],
-   "wall_seconds": 378.5
+   "wall_seconds": 732.3
   },
   {
    "task": "ld50_zhu",

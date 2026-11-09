@@ -13,6 +13,8 @@ import glob
 import json
 import os
 
+import choose
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 LB_FILE = os.path.join(BASE, "leaderboards_2026-11-08.json")
@@ -80,7 +82,14 @@ def main() -> None:
         # pick whichever arm scored better.
         if path.endswith("_plain.json"):
             continue
-        all_records.append(json.load(open(path)))
+        rec = json.load(open(path))
+        # A tuning-only pass re-estimates an earlier round on more folds and has no
+        # test score at all. It informs the choice (see choose.py); it is never a
+        # candidate for the reported row.
+        if rec.get("tune_only"):
+            continue
+        rec["_file"] = os.path.basename(path)
+        all_records.append(rec)
 
     # A task may have been run more than once (a second round with a wider
     # candidate list). Pick the round with the better INNER-CV score, never the
@@ -94,20 +103,16 @@ def main() -> None:
         if len(rounds) == 1:
             records.append(rounds[0])
             continue
-        hb = rounds[0]["higher_is_better"]
-        scored = [(inner_common(r), r) for r in rounds]
-        best_inner, best = max(scored, key=lambda sr: sr[0] if hb else -sr[0])
-        best = dict(best)
-        best["_rounds"] = len(rounds)
-        best["_inner"] = best_inner
-        records.append(best)
-        others = ", ".join(
-            f"inner {s:.4f} -> test {r['mean']:.3f}" for s, r in scored if r is not best
+        name, best, why = choose.pick([(r["_file"], r) for r in rounds],
+                                      os.path.join(BASE, "results"))
+        records.append(dict(best))
+        rows = ", ".join(
+            f"{d['file']} inner {d['inner_on_shared']:.4f} -> test {d['test_mean']:.3f}"
+            + ("" if d["reported"] else " (not reported)")
+            for d in why["rounds"]
         )
-        print(
-            f"<!-- {task}: {len(rounds)} rounds. Reporting inner {best_inner:.4f} "
-            f"-> test {best['mean']:.3f}. Not reported: {others} -->"
-        )
+        print(f"<!-- {task}: {len(rounds)} rounds compared on seeds "
+              f"{why['compared_on_seeds']}. {rows} -->")
 
     print("| Task | Metric | Our mean ± std (5 seeds) | Board top | Would-be rank | Our model |")
     print("|---|---|---|---|---|---|")
