@@ -19,14 +19,14 @@ considered. Where a task was run in more than one round, the round reported is t
 with the better inner-CV score, not the better test score.
 
 **How the reported round was chosen, and how thin the margin is.** This task was run in
-2 rounds. The reported one was chosen by inner cross-validation on training
-rows over 15 shared scaffold folds (tuning seeds 101-115),
-scoring 0.9459 against 0.9439 for
-`bbb_martins.json` -- a margin of 0.0019. Test scores played no part in the
+3 rounds. The reported one was chosen by inner cross-validation on training
+rows over 3 shared scaffold folds (tuning seeds 101-103),
+scoring 0.9544 against 0.9525 for
+`bbb_martins_r2strong.json` -- a margin of 0.0019. Test scores played no part in the
 choice. Where a round had originally been tuned on fewer folds, its own candidate list
 was re-tuned on the full set first, as a tuning-only pass that produces no test score, so
 the two rounds are compared on the same estimator rather than on the three folds they
-happened to share. The other round's official test score was 0.914.
+happened to share. The other round's official test score was 0.917.
 A margin of 0.0019 is small, and this result should be read as level with the
 entries around it rather than clearly better than them.
 

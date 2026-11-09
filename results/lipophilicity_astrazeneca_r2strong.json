@@ -1,0 +1,226 @@
+{
+ "task": "lipophilicity_astrazeneca",
+ "metric": "mae",
+ "higher_is_better": false,
+ "mean": 0.506,
+ "std": 0.005,
+ "per_seed": [
+  0.504,
+  0.51,
+  0.499,
+  0.504,
+  0.512
+ ],
+ "selected_members": [
+  "desc-tabpfn-base",
+  "dma-lgbm-shallow"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [
+   0.4032848549954204,
+   0.4835859871001198,
+   0.5672079409858759
+  ],
+  "mean_half_scores": [
+   0.3991742186465781,
+   0.481110610806662,
+   0.564907269037628
+  ],
+  "skipped": []
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "desc",
+   "learner": "tabpfn",
+   "variant": "base",
+   "log_target": false,
+   "id": "desc-tabpfn-base"
+  },
+  {
+   "features": "dma",
+   "learner": "lgbm",
+   "variant": "shallow",
+   "log_target": false,
+   "id": "dma-lgbm-shallow"
+  }
+ ],
+ "selected_inner_mean": 0.5000734811089366,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dm-lgbm-base": 0.5387369558246555,
+   "dma-lgbm-base": 0.538933834114565,
+   "wide-lgbm-base": 0.5299866739071898,
+   "dma-lgbm-deep": 0.5433212988132912,
+   "dma-lgbm-shallow": 0.5174264471437592,
+   "dma-et-base": 0.6336284347442681,
+   "dma-cat-base": 0.5280132003283753,
+   "dma-hgb-base": 0.5384976593444161,
+   "dmap-lgbm-base": 0.5262988085151584,
+   "dmap-lgbm-shallow": 0.5288688405991424,
+   "full-lgbm-base": 0.5320777537874637,
+   "dmap-cat-base": 0.5372856039892092,
+   "dmap-et-base": 0.6399664682539683,
+   "desc-tabpfn-base": 0.5115546774540523
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "desc-tabpfn-base"
+    ],
+    "inner_mean": 0.5115546774540523,
+    "inner_std": 0.04280877030398839,
+    "inner_folds": [
+     0.46298264884003637,
+     0.504544449979516,
+     0.5671369335426044
+    ]
+   },
+   {
+    "members": [
+     "desc-tabpfn-base",
+     "dma-lgbm-shallow"
+    ],
+    "inner_mean": 0.5000734811089366,
+    "inner_std": 0.04294203103236927,
+    "inner_folds": [
+     0.45332920802786675,
+     0.48987097328249085,
+     0.5570202620164522
+    ]
+   },
+   {
+    "members": [
+     "desc-tabpfn-base",
+     "dma-lgbm-shallow",
+     "dmap-lgbm-base"
+    ],
+    "inner_mean": 0.5023611307946257,
+    "inner_std": 0.04327745831029572,
+    "inner_folds": [
+     0.4535872201952698,
+     0.49472876645234987,
+     0.5587674057362574
+    ]
+   },
+   {
+    "members": [
+     "desc-tabpfn-base",
+     "dma-lgbm-shallow",
+     "dmap-lgbm-base",
+     "dma-cat-base"
+    ],
+    "inner_mean": 0.5042028152231448,
+    "inner_std": 0.04406281671825811,
+    "inner_folds": [
+     0.45535186100480113,
+     0.4951247711787397,
+     0.5621318134858936
+    ]
+   },
+   {
+    "members": [
+     "desc-tabpfn-base",
+     "dma-lgbm-shallow",
+     "dmap-lgbm-base",
+     "dma-cat-base",
+     "dmap-lgbm-shallow"
+    ],
+    "inner_mean": 0.5062458131619638,
+    "inner_std": 0.043445233091427046,
+    "inner_folds": [
+     0.4576058986941164,
+     0.49805651851318483,
+     0.5630750222785902
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dm-lgbm-base": 19.6411030292511,
+   "dma-lgbm-base": 36.88011050224304,
+   "wide-lgbm-base": 35.60646629333496,
+   "dma-lgbm-deep": 41.96709179878235,
+   "dma-lgbm-shallow": 28.534170389175415,
+   "dma-et-base": 12.984750270843506,
+   "dma-cat-base": 75.99617171287537,
+   "dma-hgb-base": 119.39235734939575,
+   "dmap-lgbm-base": 43.64893937110901,
+   "dmap-lgbm-shallow": 38.155866861343384,
+   "full-lgbm-base": 82.4108395576477,
+   "dmap-cat-base": 94.89881706237793,
+   "dmap-et-base": 18.77251958847046,
+   "desc-tabpfn-base": 3328.4820919036865
+  }
+ },
+ "dataset": {
+  "train_val": 3360,
+  "test": 840,
+  "unique_smiles": 4200,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "atompair",
+   "avalon",
+   "desc",
+   "fcfp",
+   "maccs",
+   "morgan",
+   "rdkfp"
+  ],
+  "feature_columns": 8576,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "strong",
+ "candidate_ids": [
+  "dm-lgbm-base",
+  "dma-lgbm-base",
+  "wide-lgbm-base",
+  "dma-lgbm-deep",
+  "dma-lgbm-shallow",
+  "dma-et-base",
+  "dma-cat-base",
+  "dma-hgb-base",
+  "dmap-lgbm-base",
+  "dmap-lgbm-shallow",
+  "full-lgbm-base",
+  "dmap-cat-base",
+  "dmap-et-base",
+  "desc-tabpfn-base"
+ ],
+ "provenance": {
+  "python": "3.13.18",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.1.3",
+  "scipy": "1.16.3",
+  "sklearn": "1.6.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "2.3.3",
+  "tabpfn": "9.2.0",
+  "torch": "2.11.0+cpu"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "/kaggle/input/qv-tabpfn-v2-weights/tabpfn-v2-regressor.ckpt",
+  "ckpt_classifier": "/kaggle/input/qv-tabpfn-v2-weights/tabpfn-v2-classifier.ckpt",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 10279.7,
+ "finished_utc": "2026-11-09T10:34:35Z"
+}

@@ -35,31 +35,31 @@
   {
    "task": "caco2_wang",
    "metric": "mae",
-   "mean": 0.3,
-   "std": 0.013,
-   "would_be_rank": 9,
+   "mean": 0.293,
+   "std": 0.012,
+   "would_be_rank": 8,
    "of": 25,
-   "listed_better_than_us": 8,
+   "listed_better_than_us": 7,
    "selected_members": [
-    "mlng-lgbm-deep",
-    "mlng-cat-base"
+    "desc-tabpfn-base"
    ],
-   "wall_seconds": 2711.5
+   "wall_seconds": 1404.0
   },
   {
    "task": "clearance_hepatocyte_az",
    "metric": "spearman",
-   "mean": 0.46,
-   "std": 0.011,
+   "mean": 0.45,
+   "std": 0.015,
    "would_be_rank": 4,
    "of": 19,
    "listed_better_than_us": 3,
    "selected_members": [
-    "mlng-cat-base-log",
-    "mlng-lgbm-base-log",
-    "mlng-et-base-log"
+    "desc-tabpfn-base",
+    "dma-et-base-log",
+    "dma-hgb-base-log",
+    "dma-lgbm-base"
    ],
-   "wall_seconds": 926.3
+   "wall_seconds": 1796.0
   },
   {
    "task": "clearance_microsome_az",
@@ -79,55 +79,61 @@
   {
    "task": "cyp2c9_substrate_carbonmangels",
    "metric": "pr-auc",
-   "mean": 0.38,
-   "std": 0.015,
-   "would_be_rank": 13,
+   "mean": 0.396,
+   "std": 0.012,
+   "would_be_rank": 10,
    "of": 21,
-   "listed_better_than_us": 12,
+   "listed_better_than_us": 9,
    "selected_members": [
     "dm-lgbm-base",
-    "dma-lgbm-shallow"
+    "full-lgbm-base",
+    "dma-lgbm-shallow",
+    "dmap-lgbm-base",
+    "dma-lgbm-base"
    ],
-   "wall_seconds": 289.9
+   "wall_seconds": 335.3
   },
   {
    "task": "cyp2d6_substrate_carbonmangels",
    "metric": "pr-auc",
-   "mean": 0.686,
-   "std": 0.033,
+   "mean": 0.689,
+   "std": 0.031,
    "would_be_rank": 8,
    "of": 19,
    "listed_better_than_us": 7,
    "selected_members": [
-    "dma-lgbm-shallow"
+    "dma-lgbm-shallow",
+    "dmap-cat-base"
    ],
-   "wall_seconds": 236.6
+   "wall_seconds": 335.0
   },
   {
    "task": "cyp3a4_substrate_carbonmangels",
    "metric": "roc-auc",
-   "mean": 0.644,
+   "mean": 0.648,
    "std": 0.021,
-   "would_be_rank": 7,
+   "would_be_rank": 6,
    "of": 20,
-   "listed_better_than_us": 6,
+   "listed_better_than_us": 5,
    "selected_members": [
+    "dmap-lgbm-shallow",
     "dma-lgbm-shallow"
    ],
-   "wall_seconds": 306.4
+   "wall_seconds": 333.3
   },
   {
    "task": "dili",
    "metric": "roc-auc",
-   "mean": 0.881,
-   "std": 0.021,
-   "would_be_rank": 13,
+   "mean": 0.889,
+   "std": 0.018,
+   "would_be_rank": 9,
    "of": 21,
-   "listed_better_than_us": 12,
+   "listed_better_than_us": 8,
    "selected_members": [
-    "dma-lgbm-shallow"
+    "dmap-lgbm-shallow",
+    "dmap-et-base"
    ],
-   "wall_seconds": 160.6
+   "wall_seconds": 236.7
   },
   {
    "task": "half_life_obach",
@@ -148,34 +154,30 @@
   {
    "task": "herg",
    "metric": "roc-auc",
-   "mean": 0.836,
-   "std": 0.007,
-   "would_be_rank": 9,
+   "mean": 0.847,
+   "std": 0.006,
+   "would_be_rank": 6,
    "of": 21,
-   "listed_better_than_us": 8,
+   "listed_better_than_us": 5,
    "selected_members": [
-    "dma-lgbm-shallow",
-    "dma-lgbm-base",
-    "dm-lgbm-base"
+    "dma-cat-base",
+    "dma-lgbm-shallow"
    ],
-   "wall_seconds": 352.3
+   "wall_seconds": 347.3
   },
   {
    "task": "hia_hou",
    "metric": "roc-auc",
    "mean": 0.986,
-   "std": 0.002,
+   "std": 0.003,
    "would_be_rank": 5,
    "of": 21,
    "listed_better_than_us": 4,
    "selected_members": [
-    "mlng-lgbm-base",
-    "mlng-lgbm-shallow",
-    "mlng-lgbm-deep",
-    "mlng-cat-base",
-    "mlng-et-base"
+    "desc-tabpfn-base",
+    "wide-lgbm-base"
    ],
-   "wall_seconds": 732.3
+   "wall_seconds": 711.6
   },
   {
    "task": "ld50_zhu",
@@ -195,46 +197,43 @@
   {
    "task": "lipophilicity_astrazeneca",
    "metric": "mae",
-   "mean": 0.524,
-   "std": 0.003,
-   "would_be_rank": 7,
+   "mean": 0.506,
+   "std": 0.005,
+   "would_be_rank": 5,
    "of": 22,
-   "listed_better_than_us": 6,
+   "listed_better_than_us": 4,
    "selected_members": [
+    "desc-tabpfn-base",
     "dma-lgbm-shallow"
    ],
-   "wall_seconds": 2226.7
+   "wall_seconds": 10279.7
   },
   {
    "task": "pgp_broccatelli",
    "metric": "roc-auc",
-   "mean": 0.91,
-   "std": 0.015,
-   "would_be_rank": 8,
+   "mean": 0.923,
+   "std": 0.011,
+   "would_be_rank": 6,
    "of": 17,
-   "listed_better_than_us": 7,
+   "listed_better_than_us": 5,
    "selected_members": [
-    "dma-lgbm-deep",
-    "dma-lgbm-shallow",
-    "dma-lgbm-base",
-    "dma-et-base"
+    "desc-tabpfn-base",
+    "dma-hgb-base"
    ],
-   "wall_seconds": 679.4
+   "wall_seconds": 1390.2
   },
   {
    "task": "ppbr_az",
    "metric": "mae",
-   "mean": 7.766,
-   "std": 0.162,
-   "would_be_rank": 5,
+   "mean": 7.21,
+   "std": 0.217,
+   "would_be_rank": 1,
    "of": 21,
-   "listed_better_than_us": 4,
+   "listed_better_than_us": 0,
    "selected_members": [
-    "dm-lgbm-base",
-    "dma-lgbm-shallow",
-    "dma-lgbm-base"
+    "desc-tabpfn-base"
    ],
-   "wall_seconds": 1006.8
+   "wall_seconds": 5340.3
   },
   {
    "task": "vdss_lombardo",

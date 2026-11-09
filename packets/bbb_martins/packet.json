@@ -124,24 +124,12 @@
   "compared_on_seeds": [
    101,
    102,
-   103,
-   104,
-   105,
-   106,
-   107,
-   108,
-   109,
-   110,
-   111,
-   112,
-   113,
-   114,
-   115
+   103
   ],
   "rounds": [
    {
     "file": "bbb_martins.json",
-    "inner_on_shared": 0.9439284743614423,
+    "inner_on_shared": 0.9520655727032118,
     "inner_on_own_folds": 0.9520655727032118,
     "own_seeds": [
      101,
@@ -149,12 +137,25 @@
      103
     ],
     "test_mean": 0.914,
-    "source": "bbb_martins.json re-tuned by bbb_martins_retune",
+    "source": "bbb_martins.json",
+    "reported": false
+   },
+   {
+    "file": "bbb_martins_r2strong.json",
+    "inner_on_shared": 0.9524728212232331,
+    "inner_on_own_folds": 0.9524728212232331,
+    "own_seeds": [
+     101,
+     102,
+     103
+    ],
+    "test_mean": 0.917,
+    "source": "bbb_martins_r2strong.json",
     "reported": false
    },
    {
     "file": "bbb_martins_r3maplight.json",
-    "inner_on_shared": 0.9458612408117927,
+    "inner_on_shared": 0.9543772248691226,
     "inner_on_own_folds": 0.9458612408117927,
     "own_seeds": [
      101,

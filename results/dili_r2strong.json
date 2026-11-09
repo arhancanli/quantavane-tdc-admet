@@ -1,0 +1,226 @@
+{
+ "task": "dili",
+ "metric": "roc-auc",
+ "higher_is_better": true,
+ "mean": 0.889,
+ "std": 0.018,
+ "per_seed": [
+  0.924,
+  0.885,
+  0.88,
+  0.876,
+  0.879
+ ],
+ "selected_members": [
+  "dmap-lgbm-shallow",
+  "dmap-et-base"
+ ],
+ "blend_mode": "mean",
+ "stack_decision": {
+  "mode": "mean",
+  "stack_half_scores": [
+   0.7333333333333334,
+   0.9699248120300752
+  ],
+  "mean_half_scores": [
+   0.7277777777777777,
+   0.9624060150375939
+  ],
+  "skipped": [
+   "fold 103: half too small"
+  ]
+ },
+ "official_stackers": [],
+ "selected_config_details": [
+  {
+   "features": "dmap",
+   "learner": "lgbm",
+   "variant": "shallow",
+   "log_target": false,
+   "id": "dmap-lgbm-shallow"
+  },
+  {
+   "features": "dmap",
+   "learner": "et",
+   "variant": "base",
+   "log_target": false,
+   "id": "dmap-et-base"
+  }
+ ],
+ "selected_inner_mean": 0.8751337177082602,
+ "inner_cv": {
+  "tune_seeds": [
+   101,
+   102,
+   103
+  ],
+  "config_inner_mean": {
+   "dm-lgbm-base": 0.8511773014910862,
+   "dma-lgbm-base": 0.8433081847957223,
+   "wide-lgbm-base": 0.8555949685355025,
+   "dma-lgbm-deep": 0.8567772481229649,
+   "dma-lgbm-shallow": 0.8642316271640077,
+   "dma-et-base": 0.8514450846422799,
+   "dma-cat-base": 0.8542690379243095,
+   "dma-hgb-base": 0.85685999067339,
+   "dmap-lgbm-base": 0.8511369368162437,
+   "dmap-lgbm-shallow": 0.8734332814293578,
+   "full-lgbm-base": 0.8435845881064493,
+   "dmap-cat-base": 0.8501559132464216,
+   "dmap-et-base": 0.8658400555936233,
+   "desc-tabpfn-base": 0.8617830351600019
+  },
+  "blend_candidates": [
+   {
+    "members": [
+     "dmap-lgbm-shallow"
+    ],
+    "inner_mean": 0.8734332814293578,
+    "inner_std": 0.06748205536236136,
+    "inner_folds": [
+     0.7796296296296298,
+     0.935546875,
+     0.9051233396584439
+    ]
+   },
+   {
+    "members": [
+     "dmap-lgbm-shallow",
+     "dmap-et-base"
+    ],
+    "inner_mean": 0.8751337177082602,
+    "inner_std": 0.07583230037331275,
+    "inner_folds": [
+     0.7685185185185185,
+     0.9384765625,
+     0.9184060721062618
+    ]
+   },
+   {
+    "members": [
+     "dmap-lgbm-shallow",
+     "dmap-et-base",
+     "dma-lgbm-shallow"
+    ],
+    "inner_mean": 0.8717108600832807,
+    "inner_std": 0.08038213268943227,
+    "inner_folds": [
+     0.7583333333333333,
+     0.935546875,
+     0.9212523719165084
+    ]
+   },
+   {
+    "members": [
+     "dmap-lgbm-shallow",
+     "dmap-et-base",
+     "dma-lgbm-shallow",
+     "desc-tabpfn-base"
+    ],
+    "inner_mean": 0.8735696803549676,
+    "inner_std": 0.08214308218534655,
+    "inner_folds": [
+     0.7574074074074074,
+     0.9306640625,
+     0.9326375711574952
+    ]
+   },
+   {
+    "members": [
+     "dmap-lgbm-shallow",
+     "dmap-et-base",
+     "dma-lgbm-shallow",
+     "desc-tabpfn-base",
+     "dma-hgb-base"
+    ],
+    "inner_mean": 0.8739517995818399,
+    "inner_std": 0.0856864470397611,
+    "inner_folds": [
+     0.7527777777777778,
+     0.93359375,
+     0.935483870967742
+    ]
+   }
+  ],
+  "config_seconds": {
+   "dm-lgbm-base": 0.48381590843200684,
+   "dma-lgbm-base": 0.9822211265563965,
+   "wide-lgbm-base": 1.1400582790374756,
+   "dma-lgbm-deep": 1.4658350944519043,
+   "dma-lgbm-shallow": 0.8692817687988281,
+   "dma-et-base": 1.4302401542663574,
+   "dma-cat-base": 9.807820558547974,
+   "dma-hgb-base": 12.80370807647705,
+   "dmap-lgbm-base": 1.4108803272247314,
+   "dmap-lgbm-shallow": 1.2346570491790771,
+   "full-lgbm-base": 3.3462142944335938,
+   "dmap-cat-base": 13.517693519592285,
+   "dmap-et-base": 1.4593377113342285,
+   "desc-tabpfn-base": 164.72266030311584
+  }
+ },
+ "dataset": {
+  "train_val": 379,
+  "test": 96,
+  "unique_smiles": 475,
+  "unparsable_smiles": 0,
+  "feature_blocks": [
+   "atompair",
+   "avalon",
+   "desc",
+   "fcfp",
+   "maccs",
+   "morgan",
+   "rdkfp"
+  ],
+  "feature_columns": 8576,
+  "train_test_smiles_overlap": 0
+ },
+ "official_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget": "strong",
+ "candidate_ids": [
+  "dm-lgbm-base",
+  "dma-lgbm-base",
+  "wide-lgbm-base",
+  "dma-lgbm-deep",
+  "dma-lgbm-shallow",
+  "dma-et-base",
+  "dma-cat-base",
+  "dma-hgb-base",
+  "dmap-lgbm-base",
+  "dmap-lgbm-shallow",
+  "full-lgbm-base",
+  "dmap-cat-base",
+  "dmap-et-base",
+  "desc-tabpfn-base"
+ ],
+ "provenance": {
+  "python": "3.13.18",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "tdc": "1.1.15",
+  "rdkit": "2026.9.1",
+  "numpy": "2.1.3",
+  "scipy": "1.16.3",
+  "sklearn": "1.6.1",
+  "lightgbm": "4.7.0",
+  "catboost": "1.2.10",
+  "pandas": "2.3.3",
+  "tabpfn": "9.2.0",
+  "torch": "2.11.0+cpu"
+ },
+ "tabpfn_settings": {
+  "ckpt_regressor": "/kaggle/input/qv-tabpfn-v2-weights/tabpfn-v2-regressor.ckpt",
+  "ckpt_classifier": "/kaggle/input/qv-tabpfn-v2-weights/tabpfn-v2-classifier.ckpt",
+  "n_estimators": 4,
+  "max_train_rows": 6000
+ },
+ "wall_seconds": 236.7,
+ "finished_utc": "2026-11-09T06:28:59Z"
+}
