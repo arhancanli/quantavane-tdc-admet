@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: dataset
+title: "Therapeutics Data Commons ADMET benchmark runs by Quantavane"
+abstract: "ADMET benchmark runs on the Therapeutics Data Commons: model selection by inner cross-validation only, every round reported."
+authors:
+  - family-names: Canli
+    given-names: Arhan
+    affiliation: Quantavane
+    email: arhan@quantavane.com
+license: MIT
+url: "https://quantavane.com"
+repository-code: "https://github.com/arhancanli/quantavane-tdc-admet"
+keywords:
+  - ADMET
+  - benchmark
+  - machine learning
