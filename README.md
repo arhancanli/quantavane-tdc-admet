@@ -181,6 +181,22 @@ Results whose selected model includes a `tabpfn` member use the TabPFN v2 open
 weights from Prior Labs, under their licence, which requires the line above. The
 checkpoints are not redistributed here; `models.py` reads them from a local path.
 
+## How to cite
+
+If you use this work, please cite it as below.
+
+```bibtex
+@misc{quantavane-tdc-admet,
+  author       = {Canli, Arhan},
+  title        = {Therapeutics Data Commons ADMET benchmark runs by Quantavane},
+  year         = {2026},
+  howpublished = {\url{https://github.com/arhancanli/quantavane-tdc-admet}},
+  note         = {Quantavane; MIT licence}
+}
+```
+
+[CITATION.cff](CITATION.cff) gives the same reference for GitHub's "Cite this repository" button.
+
 ## Licence
 
 MIT, see `LICENSE`. The datasets, the splits and the scoring belong to the
